@@ -6,7 +6,7 @@
 }
 .menu-item {
   display: inline-block;
-  font-size: 14px;
+  font-size: 1.4rem;
   padding: 0 10px;
   transition: color .2s ease;
 }
