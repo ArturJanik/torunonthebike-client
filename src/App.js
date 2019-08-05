@@ -1,8 +1,16 @@
 import React from 'react';
+import { 
+  Route,
+  Switch
+} from 'react-router-dom';
+
+import Layout from './hoc/Layout/Layout';
 
 function App() {
   return (
-    <div>App.js</div>
+    <Layout>
+      <div>App.js</div>
+    </Layout>
   );
 }
 
