@@ -1,0 +1,12 @@
+.copyright {
+  color: #666;
+  flex: 0 0 1;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+@media all and (max-width: 480px){
+  .copyright {
+    display: none;
+  }
+}

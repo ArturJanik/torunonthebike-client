@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { 
+  Route,
+  Switch
+} from 'react-router-dom';
+
+import Layout from './hoc/Layout/Layout';
+import Map from './containers/Map/Map';
+import Document from './containers/Document/Document';
+
+const routes = (
+  <Switch>
+    <Route exact path="/polityka-prywatnosci" render={() => <Document show="privacy" />} />
+    <Route exact path="/o-projekcie" render={() => <Document show="about" />} />
+    <Route component={Map} />
+  </Switch>
+)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      {routes}
+    </Layout>
   );
 }
 
