@@ -11,6 +11,14 @@ import App from './App';
 
 import history from './utilities/history';
 
+// import ReactGA from 'react-ga';
+// ReactGA.initialize('UA-140808271-1');
+
+// history.listen((location, action) => {
+//   ReactGA.set({ page: location.pathname });
+//   ReactGA.pageview(location.pathname);
+// });
+
 const app = (
   <Router history={history}>
     <App />
