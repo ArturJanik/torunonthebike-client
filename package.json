@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
+    "leaflet": "1.5.1",
+    "leaflet-almostover": "0.1.0",
+    "leaflet-geometryutil": "0.9.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-ga": "^2.6.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "react-transition-group": "^4.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -19,13 +26,14 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "not ie < 11"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "not ie < 11"
     ]
   }
 }
