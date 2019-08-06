@@ -7,17 +7,17 @@ import { MapContext, MapConsumer } from '../../../context/MapContext';
 class MapWrapper extends Component {
   componentDidMount(){
     const ctx = this.context;
-    if(ctx.map === null){
-      const mapOptions = {
-        center: [53.025, 18.62],
-        zoom: 14,
-        zoomControl: false
-      }
-      const map = L.map('map', mapOptions);
-      ctx.setMap(map);
+    const mapOptions = {
+      center: [53.025, 18.62],
+      zoom: 14,
+      zoomControl: false
     }
+    const map = L.map('map', mapOptions);
+    ctx.setMap(map);
   }
 
+  // If there is no map initialized
+  // it will not render it's children layers (route layer, event layer etc.)
   render(){
     return (
       <MapConsumer>

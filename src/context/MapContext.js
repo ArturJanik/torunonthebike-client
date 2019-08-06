@@ -14,7 +14,7 @@ export class MapProvider extends Component {
   }
 
   setMap = (mapObj) => {
-    this.setState({map: mapObj})
+    if(this.state.map === null) this.setState({map: mapObj});
   }
 
   render(){
