@@ -123,6 +123,9 @@ body, div, p {
   padding: 0;
 }
 
+html {
+  font-size: 62.5%;
+}
 html,
 body {
   background: #fff;
@@ -130,6 +133,7 @@ body {
   height: 100vh;
 }
 body {
+  font-size: 1.6rem;
   height: 100%;
 }
 

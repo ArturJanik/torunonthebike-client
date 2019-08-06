@@ -1,0 +1,22 @@
+.map__section {
+  background: #fff;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  padding-bottom: 45px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+}
+.map__wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+@media all and (max-width: 480px){
+  .map__section {
+    padding-bottom: 35px;
+  }
+}

@@ -1,0 +1,11 @@
+.popup .leaflet-popup-content-wrapper {
+  border-radius: 4px;
+}
+.popup .leaflet-popup-content {
+  margin: 0;
+  padding: 20px 10px 10px;
+}
+.popup .leaflet-popup-content p {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+}
