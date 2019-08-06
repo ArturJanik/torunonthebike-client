@@ -1,0 +1,22 @@
+.filter__option {
+  align-items: flex-start;
+  background: #eee;
+  border-bottom: 2px solid #ddd;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.4rem;
+  padding: 5px 10px;
+}
+.filter__option__box {
+  background: #fff;
+  border: 2px solid#ccc;
+  display: inline-block;
+  height: 20px;
+  flex: 0 0 20px;
+  margin-right: 10px;
+  transition: border .2s ease;
+  max-width: 20px;
+}
+.filter__option:hover .filter__option__box {
+  border: 2px solid#999;
+}

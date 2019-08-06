@@ -9,33 +9,32 @@ class RouteLayer extends Component {
   }
 
   componentDidMount(){
-    this.fetchRoutesData();
-    // if(navigator.onLine){
-    //   const routesData = localStorage.getItem('routesData');
-    //   if(routesData !== null) {
-    //     const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001/api/bikelanes/last_modification' : 'https://api.onthe.bike/api/bikelanes/last_modification';
-    //     axios.get(url)
-    //     .then(res => {
-    //       const lastChange = (res.data.last_changed_at !== null) ? new Date(res.data.last_changed_at) : null;
-    //       const lastChangeLocal = (localStorage.getItem('routesLastChange') !== null) ? new Date(localStorage.getItem('routesLastChange')) : null;
+    if(navigator.onLine){
+      const routesData = localStorage.getItem('routesData');
+      if(routesData !== null) {
+        const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001/api/bikelanes/last_modification' : 'https://api.onthe.bike/api/bikelanes/last_modification';
+        axios.get(url)
+        .then(res => {
+          const lastChange = (res.data.last_changed_at !== null) ? new Date(res.data.last_changed_at) : null;
+          const lastChangeLocal = (localStorage.getItem('routesLastChange') !== null) ? new Date(localStorage.getItem('routesLastChange')) : null;
 
-    //       if(lastChange > lastChangeLocal){
-    //         localStorage.removeItem('routesData');
-    //         localStorage.removeItem('routesLastChange');
-    //         this.fetchRoutesData();
-    //       } else {
-    //         this.setState({ routes: JSON.parse(routesData) });
-    //       }
-    //     }).catch(error => {
-    //       console.log(error);
-    //     });
-    //   } else {
-        // this.fetchRoutesData();
-    //   }
-    // } else {
-    //   const routesData = localStorage.getItem('routesData');
-    //   if(routesData !== null) this.setState({ routes: JSON.parse(routesData) });
-    // }
+          if(lastChange > lastChangeLocal){
+            localStorage.removeItem('routesData');
+            localStorage.removeItem('routesLastChange');
+            this.fetchRoutesData();
+          } else {
+            this.setState({ routes: JSON.parse(routesData) });
+          }
+        }).catch(error => {
+          console.log(error);
+        });
+      } else {
+        this.fetchRoutesData();
+      }
+    } else {
+      const routesData = localStorage.getItem('routesData');
+      if(routesData !== null) this.setState({ routes: JSON.parse(routesData) });
+    }
   }
 
   fetchRoutesData = () => {
@@ -78,19 +77,19 @@ class RouteLayer extends Component {
   }
 
   styleRoutes = (feature, layer) => {
-    // const {filterType, filterOptions} = this.context;
-    // if(filterType !== 'default'){
-    //   filterOptions.forEach(opt => {
-    //     if(opt.value.toString() === feature.properties[filterType].toString()){
-    //       if(opt.checked === true){
-    //         feature.currentColor = opt.color;
-    //         layer.setStyle({ color: opt.color, className: '' })
-    //       } else {
-    //         layer.setStyle({ opacity: 0, className: 'unhoverable' })
-    //       }
-    //     }
-    //   })
-    // }
+    const {filterType, filterOptions} = this.context;
+    if(filterType !== 'default'){
+      filterOptions.forEach(opt => {
+        if(opt.value.toString() === feature.properties[filterType].toString()){
+          if(opt.checked === true){
+            feature.currentColor = opt.color;
+            layer.setStyle({ color: opt.color, className: '' })
+          } else {
+            layer.setStyle({ opacity: 0, className: 'unhoverable' })
+          }
+        }
+      })
+    }
   }
 
   showRoutes = () => {
