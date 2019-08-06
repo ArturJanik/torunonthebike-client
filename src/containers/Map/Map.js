@@ -5,6 +5,7 @@ import MapWrapper from './MapWrapper/MapWrapper'
 import TileLayer from './Layers/TileLayer/TileLayer'
 import RouteLayer from './Layers/RouteLayer/RouteLayer'
 import EventLayer from './Layers/EventLayer/EventLayer'
+import ControlLayer from './Layers/ControlLayer/ControlLayer'
 
 import { MapProvider } from '../../context/MapContext';
 
@@ -20,6 +21,7 @@ class Map extends Component {
             <RouteLayer />
             <EventLayer />
           </MapWrapper>
+          <ControlLayer />
         </MapProvider>
       </section>
     )
