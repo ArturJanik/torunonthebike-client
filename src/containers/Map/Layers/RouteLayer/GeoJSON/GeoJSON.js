@@ -24,7 +24,7 @@ class GeoJSON extends Component {
     const {map} = this.context;
     const {data, options} = this.props;
     const routes = L.geoJSON(data, options).addTo(map);
-    // map.almostOver.addLayer(routes);
+    map.almostOver.addLayer(routes);
     this.setState({lanesLayer: routes});
   }
 

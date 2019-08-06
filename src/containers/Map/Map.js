@@ -4,6 +4,7 @@ import styles from './Map.module.css';
 import MapWrapper from './MapWrapper/MapWrapper'
 import TileLayer from './Layers/TileLayer/TileLayer'
 import RouteLayer from './Layers/RouteLayer/RouteLayer'
+import EventLayer from './Layers/EventLayer/EventLayer'
 
 import { MapProvider } from '../../context/MapContext';
 
@@ -17,6 +18,7 @@ class Map extends Component {
           <MapWrapper className={styles['map__wrapper']}>
             <TileLayer />
             <RouteLayer />
+            <EventLayer />
           </MapWrapper>
         </MapProvider>
       </section>

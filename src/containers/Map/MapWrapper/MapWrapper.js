@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import L from 'leaflet';
+import 'leaflet-geometryutil';
+import 'leaflet-almostover';
 import 'leaflet/dist/leaflet.css';
 
 import { MapContext, MapConsumer } from '../../../context/MapContext';
