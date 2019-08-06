@@ -1,9 +1,11 @@
 .cookies__wrapper {
+  align-items: flex-start;
   background: #fff;
   bottom: 0;
   display: flex;
   justify-content: space-between;
   left: 0;
+  line-height: 1em;
   padding: 20px;
   position: fixed;
   right: 0;

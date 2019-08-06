@@ -6,12 +6,12 @@
 }
 .fromTo {
   border-bottom: 1px solid #eee;
-  font-size: 11px;
+  font-size: 1.1rem;
   padding-bottom: 5px;
 }
 .fromTo span {
   color: #666;
-  font-size: 13px;
+  font-size: 1.3rem;
 }
 .surface span,
 .quality span,
