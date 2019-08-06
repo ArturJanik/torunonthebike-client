@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Map.module.css';
 
+import MessagePopup from '../../components/MessagePopup/MessagePopup';
 import MapWrapper from './MapWrapper/MapWrapper'
 import TileLayer from './Layers/TileLayer/TileLayer'
 import RouteLayer from './Layers/RouteLayer/RouteLayer'
@@ -22,6 +23,7 @@ class Map extends Component {
             <EventLayer />
           </MapWrapper>
           <ControlLayer />
+          <MessagePopup />
         </MapProvider>
       </section>
     )
