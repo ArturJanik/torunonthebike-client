@@ -12,12 +12,12 @@ class GeoJSON extends Component {
   }
 
   componentDidUpdate(prevProps){
-    // const {map} = this.context;
-    // if((this.props.options !== prevProps.options) && map.hasLayer(this.state.lanesLayer)){
-      // map.removeLayer(this.state.lanesLayer);
-      // map.almostOver.removeLayer(this.state.lanesLayer);
-      // this.showGeoJSONRoutes();
-    // }
+    const {map} = this.context;
+    if((this.props.options !== prevProps.options) && map.hasLayer(this.state.lanesLayer)){
+      map.removeLayer(this.state.lanesLayer);
+      map.almostOver.removeLayer(this.state.lanesLayer);
+      this.showGeoJSONRoutes();
+    }
   }
 
   showGeoJSONRoutes = () => {
