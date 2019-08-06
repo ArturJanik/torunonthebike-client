@@ -28,13 +28,12 @@
     "production": [
       ">0.2%",
       "not op_mini all",
-      "not ie < 11"
+      "ie 11"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version",
-      "not ie < 11"
+      ">0.2%",
+      "not op_mini all",
+      "ie 11"
     ]
   }
 }
