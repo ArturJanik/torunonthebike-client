@@ -1,0 +1,26 @@
+.icon--alert {
+  border-radius: 10px;
+  box-shadow: 0px 3px 1px 0px #ff9f00;
+  transition: box-shadow .3s ease;
+}
+.icon--alert:hover {
+  box-shadow: 0px 0px 1px 0px #ff4e00;
+}
+.icon--alert1 {
+  composes: icon--alert;
+  background: url('../../../../assets/alert1.png') no-repeat #fff;
+  background-position: center;
+  background-size: 35px 35px;
+}
+.icon--alert2 {
+  composes: icon--alert;
+  background: url('../../../../assets/alert2.png') no-repeat #fff;
+  background-position: center;
+  background-size: 35px 35px;
+}
+.icon--alert3 {
+  composes: icon--alert;
+  background: url('../../../../assets/alert3.png') no-repeat #fff;
+  background-position: center;
+  background-size: 35px 35px;
+}

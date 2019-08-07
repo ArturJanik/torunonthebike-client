@@ -7,11 +7,20 @@ import TileLayer from './Layers/TileLayer/TileLayer'
 import RouteLayer from './Layers/RouteLayer/RouteLayer'
 import EventLayer from './Layers/EventLayer/EventLayer'
 import ControlLayer from './Layers/ControlLayer/ControlLayer'
+import AlertLayer from './Layers/AlertLayer/AlertLayer'
 
 import { MapProvider } from '../../context/MapContext';
 
 class Map extends Component {
+  state = {
+    alertsVisible: false,
+  }
+
   componentDidMount = () => document.title = 'Toruń.onthe.bike';
+
+  toggleAlerts = () => {
+    this.setState(prevState => ({alertsVisible: !prevState.alertsVisible}))
+  }
 
   render(){
     return(
@@ -21,8 +30,9 @@ class Map extends Component {
             <TileLayer />
             <RouteLayer />
             <EventLayer />
+            {this.state.alertsVisible ? <AlertLayer /> : null}
           </MapWrapper>
-          <ControlLayer />
+          <ControlLayer toggleAlerts={this.toggleAlerts} />
           <MessagePopup />
         </MapProvider>
       </section>

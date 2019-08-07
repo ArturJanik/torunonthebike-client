@@ -51,10 +51,8 @@ class MessagePopup extends Component {
       const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001/api/feedback' : 'https://api.onthe.bike/api/feedback';
       axios.post(url, {message: this.state.formText})
       .then(res => {
-        if(res.status === 200){
-          this.setState({error: false, success: true});
-          this.successTimeout = setTimeout(() => this.hidePopup(), 3000);
-        }
+        this.setState({error: false, success: true});
+        this.successTimeout = setTimeout(() => this.hidePopup(), 3000);
       }).catch(error => {
         this.setState({error: 'Błąd serwera. Spróbuj ponownie później.'})
       });
