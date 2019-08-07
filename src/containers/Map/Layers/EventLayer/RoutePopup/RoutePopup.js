@@ -63,92 +63,43 @@ const getQuality = (quality) => {
   }
 }
 
-const createStreet = (name) => {
-  const street = document.createElement('p');
-  street.className = styles.street;
-  street.textContent =  name;
-  return street;
-}
+const createStreet = (name) => `<p class="${styles.street}">${name}</p>`;
 
 const createFromTo = ({nameFrom, nameTo, type}) => {
-  const fromTo = document.createElement('p');
-  fromTo.className = styles.fromTo;
-
-  if(type !== '9') {
-    fromTo.innerHTML = '<strong>od</strong> <span class="from"></span> <strong>do</strong> <span class="to"></span>';
-  } else {
-    fromTo.innerHTML = '<span class="from"></span> <span class="to"></span>';
+  let inner = `<strong>od</strong> <span class="from">${nameFrom}</span> <strong>do</strong> <span class="to">${nameTo}</span>`;
+  if(type === '9') {
+    inner = `<span class="from">${nameFrom}</span> <span class="to">${nameTo}</span>`;
   }
-
-  fromTo.querySelector('.from').textContent = nameFrom;
-  fromTo.querySelector('.to').textContent = nameTo;
-
-  return fromTo;
+  return `<p class="${styles.fromTo}">${inner}</p>`;
 }
 
 const createType = (lanetype) => {
-  let type = null;
-  if( lanetype !== '9') {
-    type = document.createElement('p');
-    type.className = styles.type;
-    type.innerHTML = '<strong>Typ:</strong> <span></span>';
-    type.querySelector('span').textContent = getType(lanetype);
-  }
-  return type;
+  if(lanetype === '9') return null;
+  return `<p class="${styles.type}"><strong>Typ:</strong> <span>${getType(lanetype)}</span></p>`;
 }
 
-const createSurface = (surfaceType) => {
-  const surface = document.createElement('p');
-  surface.className = styles.surface;
-  surface.innerHTML = '<strong>Nawierzchnia:</strong> <span></span>';
-  surface.querySelector('span').textContent = getSurface(surfaceType);
-  return surface;
-}
+const createSurface = (surfaceType) => `<p class="${styles.surface}"><strong>Nawierzchnia:</strong> <span>${getSurface(surfaceType)}</span></p>`;
 
-const createQuality = (qualityType) => {
-  const quality = document.createElement('p');
-  quality.className = styles.quality;
-  quality.innerHTML = '<strong>Jakość:</strong> <span></span>';
-  quality.querySelector('span').textContent = getQuality(qualityType);
-  return quality;
-}
+const createQuality = (qualityType) => `<p class="${styles.quality}"><strong>Jakość:</strong> <span>${getQuality(qualityType)}</span></p>`;
 
 const createPopup = (popupType, properties) => {
-  let popup = document.createElement('div');
-  let description;
   switch (popupType.toString()) {
     case 'station':
-      description = document.createElement('p');
-      description.className = styles.station;
-      description.textContent = properties.name;
-      popup.append(description);
-      break;
+      return `<div><p class="${styles.station}">${properties.name}</p></div>`;
 
     case 'alert':
-      description = document.createElement('p');
-      description.className = styles.alert;
-      description.textContent = properties.description;
-      popup.append(description);
-      break;
+      return `<div><p class="${styles.alert}">${properties.description}</p></div>`;
   
     default:
-      popup.className = "popupStreet";
-
-      const street = createStreet(properties.street);
-      const fromTo = createFromTo(properties);
-      const type = createType(properties.type);
-      const surface = createSurface(properties.surface);
-      const quality = createQuality(properties.quality);
-    
-      popup.append(street);
-      popup.append(fromTo);
-      popup.append(type);
-      popup.append(surface);
-      popup.append(quality);
-      break;
+      const {street, type, surface, quality} = properties;
+      return `<div class="popupStreet">
+        ${createStreet(street)}
+        ${createFromTo(properties)}
+        ${createType(type)}
+        ${createSurface(surface)}
+        ${createQuality(quality)}
+      </div>`;
   }
-
-  return popup;
 }
 
 export default createPopup;
