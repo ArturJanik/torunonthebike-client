@@ -1,13 +1,9 @@
 import { Component } from 'react';
 import axios from 'axios';
 import L from 'leaflet';
-// import io from 'socket.io-client';
 import createPopup from '../EventLayer/RoutePopup/RoutePopup';
 import styles from './AlertLayer.module.css';
 import { MapContext } from '../../../../context/MapContext';
-
-// const socketServer = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001' : 'https://api.onthe.bike';
-// const socket = io(socketServer,{transports: ['websocket']});
 
 class AlertLayer extends Component {
   state = {
@@ -31,14 +27,22 @@ class AlertLayer extends Component {
 
   async componentDidMount(){
     const alertsData = localStorage.getItem('alertsData');
-    // if(alertsData === null){
+    if(alertsData === null){
       await this.fetchAlertsData();
       this.drawAlertsLayer();
-    // } else {
-      // const lastLocalChange = localStorage.getItem('alertsLastChange');
-      // socket.emit('verifyUptodate', {lastLocalChange});
-      // socket.on('uptodateStatus', this.handleUptodateStatus);
-    // }
+    } else {
+      const lastLocalChange = localStorage.getItem('alertsLastChange');
+      
+      const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001/api/alerts/verify_last_modification' : 'https://api.onthe.bike/api/alerts/verify_last_modification';
+      
+      axios.post(url, {lastLocalChange})
+      .then(res => {
+        const upToDate = res.data;
+        this.handleUptodateStatus(upToDate);
+      }).catch(err => {
+        this.setState({error: 'Błąd serwera. Spróbuj ponownie później.'});
+      });
+    }
   }
 
   componentWillUnmount(){
@@ -46,7 +50,6 @@ class AlertLayer extends Component {
       this.state.alerts.remove();
       this.setState({alerts: null});
     }
-    // socket.off('uptodateStatus', this.handleUptodateStatus);
   }
 
   handleUptodateStatus = async (isUptodate) => {
@@ -63,12 +66,12 @@ class AlertLayer extends Component {
     const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001/api/alerts' : 'https://api.onthe.bike/api/alerts';
     return axios.get(url)
     .then(res => {
-      const alertsData = res.data[0];
-      const alertsLastChange = res.data[1].last_changed_at;
+      const alertsData = res.data.alerts;
+      const alertsLastChange = res.data.modificationDate;
       this.setState({ alertsData, alertsLoading: false })
       localStorage.setItem('alertsData', JSON.stringify(alertsData));
       localStorage.setItem('alertsLastChange', alertsLastChange);
-    }).catch(error => this.setState({alertsError: error, alertsLoading: false}));
+    }).catch(err => this.setState({alertsError: err, alertsLoading: false}));
   }
 
   drawAlertsLayer = () => {
