@@ -115,9 +115,17 @@ const createQuality = (qualityType) => {
 
 const createPopup = (popupType, properties) => {
   let popup = document.createElement('div');
+  let description;
   switch (popupType.toString()) {
+    case 'station':
+      description = document.createElement('p');
+      description.className = styles.station;
+      description.textContent = properties.name;
+      popup.append(description);
+      break;
+
     case 'alert':
-      const description = document.createElement('p');
+      description = document.createElement('p');
       description.className = styles.alert;
       description.textContent = properties.description;
       popup.append(description);

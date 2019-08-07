@@ -7,7 +7,7 @@ import { MapContext } from '../../../../context/MapContext';
 
 class AlertLayer extends Component {
   state = {
-    alerts: null,
+    leafletAlertsLayer: null,
     alertsData: null,
     alertsLoading: false,
     alertsError: null
@@ -46,9 +46,8 @@ class AlertLayer extends Component {
   }
 
   componentWillUnmount(){
-    if(this.state.alerts) {
-      this.state.alerts.remove();
-      this.setState({alerts: null});
+    if(this.state.leafletAlertsLayer) {
+      this.state.leafletAlertsLayer.remove();
     }
   }
 
@@ -63,6 +62,7 @@ class AlertLayer extends Component {
   }
 
   fetchAlertsData = () => {
+    this.setState({alertsLoading: true});
     const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001/api/alerts' : 'https://api.onthe.bike/api/alerts';
     return axios.get(url)
     .then(res => {
@@ -82,7 +82,7 @@ class AlertLayer extends Component {
       const popup = createPopup('alert', {description: alert.description});
       return L.marker(JSON.parse(alert.latlng), {icon: this.icons[alert.type]}).bindPopup(popup, {className: 'popup', minWidth: 200});
     }));
-    this.setState({alerts});
+    this.setState({leafletAlertsLayer: alerts});
     alerts.addTo(map);
   }
 
