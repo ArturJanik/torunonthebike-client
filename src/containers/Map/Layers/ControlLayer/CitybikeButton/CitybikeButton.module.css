@@ -1,8 +1,8 @@
 .citybike__button {
   align-items: center;
-  background: #2788ba;
+  background: #368636;
   border-radius: 50%;
-  box-shadow: 0px 3px 2px 0px #006699;
+  box-shadow: 0px 3px 2px 0px #1d502c;
   color: #fff;
   cursor: pointer;
   display: flex;
@@ -24,7 +24,7 @@
   width: 40px;
 }
 .citybike__button:before {
-  background: #006699;
+  background: #1d502c;
   border-radius: 20px;
   content: '';
   display: block;
@@ -37,7 +37,7 @@
   z-index: -1;
 }
 .citybike__button:hover {
-  box-shadow: 0px 0px 2px 0px #2788ba;
+  box-shadow: 0px 0px 2px 0px #368636;
 }
 .citybike__button:hover:before {
   top: 50px;
