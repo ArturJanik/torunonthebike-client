@@ -27,12 +27,11 @@ class AlertLayer extends Component {
 
   async componentDidMount(){
     const alertsData = localStorage.getItem('alertsData');
-    if(alertsData === null){
+    const lastLocalChange  = localStorage.getItem('alertsLastChange');
+    if(alertsData === null || lastLocalChange === null){
       await this.fetchAlertsData();
       this.drawAlertsLayer();
     } else {
-      const lastLocalChange = localStorage.getItem('alertsLastChange');
-      
       const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001/api/alerts/verify_last_modification' : 'https://api.onthe.bike/api/alerts/verify_last_modification';
       
       axios.post(url, {lastLocalChange})
