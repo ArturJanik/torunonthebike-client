@@ -1,0 +1,19 @@
+.menu--footer {
+}
+.menu--footer ul {
+  align-items: center;
+  display: flex;
+}
+.menu-item {
+  display: inline-block;
+  font-size: 1.4rem;
+  padding: 0 10px;
+  transition: color .2s ease;
+}
+.menu-item:not(:last-child){
+  border-right: 1px solid #ccc;
+}
+.menu-item:hover {
+  color: #209fd9;
+  text-decoration: underline;
+}

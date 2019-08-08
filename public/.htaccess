@@ -1,0 +1,4 @@
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule ^o-projekcie$ index.html [NC,L]
+RewriteRule ^polityka-prywatnosci$ index.html [NC,L]
