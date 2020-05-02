@@ -1,21 +1,21 @@
 {
   "name": "torunonthebike_client",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "private": true,
   "author": "Artur Janik",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0",
-    "leaflet": "1.5.1",
+    "axios": "0.19.2",
+    "leaflet": "1.6.0",
     "leaflet-almostover": "0.1.0",
-    "leaflet-geometryutil": "0.9.1",
-    "react": "^16.8.6",
-    "react-app-polyfill": "^1.0.1",
-    "react-dom": "^16.8.6",
-    "react-ga": "^2.6.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
-    "react-transition-group": "^4.2.2"
+    "leaflet-geometryutil": "0.9.3",
+    "react": "16.13.1",
+    "react-app-polyfill": "1.0.6",
+    "react-dom": "16.13.1",
+    "react-ga": "2.7.0",
+    "react-router-dom": "5.1.2",
+    "react-scripts": "3.4.1",
+    "react-transition-group": "4.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
