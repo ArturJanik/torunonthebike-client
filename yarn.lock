@@ -5969,22 +5969,15 @@ lcid@^2.0.0:
   dependencies:
     invert-kv "^2.0.0"
 
-leaflet-almostover@0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/leaflet-almostover/-/leaflet-almostover-0.1.0.tgz#55be764b23e5069dbc4d68970a7b994f0e05fc6d"
-  dependencies:
-    leaflet "0.6.x"
-    leaflet-geometryutil "*"
+leaflet-almostover@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/leaflet-almostover/-/leaflet-almostover-1.0.1.tgz#549a6102bb3d70abe376b8f0a0ec41d867854b29"
 
-leaflet-geometryutil@*, leaflet-geometryutil@0.9.3:
+leaflet-geometryutil@0.9.3:
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/leaflet-geometryutil/-/leaflet-geometryutil-0.9.3.tgz#e10fa302d99d4b1d3c6365a1f39298635a2704cd"
   dependencies:
     leaflet ">=0.7.0"
-
-leaflet@0.6.x:
-  version "0.6.4"
-  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-0.6.4.tgz#10cad2f24bf2aa524ffa95dd40fdaf2eb0c23849"
 
 leaflet@1.6.0, leaflet@>=0.7.0:
   version "1.6.0"
@@ -7862,7 +7855,7 @@ prompts@^2.0.1:
     kleur "^3.0.2"
     sisteransi "^1.0.0"
 
-prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@15.7.2, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   dependencies:
@@ -8002,7 +7995,7 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-app-polyfill@^1.0.6:
+react-app-polyfill@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-1.0.6.tgz#890f8d7f2842ce6073f030b117de9130a5f385f0"
   dependencies:

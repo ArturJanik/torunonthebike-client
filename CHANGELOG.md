@@ -1,3 +1,10 @@
+## 1.3.0
+
+### Changed
+
+* moved styles to css modules
+* removed duplicate button styles
+
 ## 1.2.0
 
 ### Changed
