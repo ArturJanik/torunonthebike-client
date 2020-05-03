@@ -1,22 +1,22 @@
-.map__section {
-  background: #fff;
+.mapSection {
+  composes: bg-color--white from '../../mixins/color.module.css';
+  composes: position--fixed from '../../mixins/position.module.css';
+  composes: width--fluid from '../../mixins/width.module.css';
   bottom: 0;
   height: 100%;
   left: 0;
   padding-bottom: 45px;
-  position: fixed;
   right: 0;
   top: 0;
-  width: 100%;
   z-index: 5;
 }
-.map__wrapper {
+.mapWrapper {
+  composes: width--fluid from '../../mixins/width.module.css';
   height: 100%;
-  width: 100%;
 }
 
 @media all and (max-width: 480px){
-  .map__section {
+  .mapSection {
     padding-bottom: 35px;
   }
 }

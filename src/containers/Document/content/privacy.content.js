@@ -1,7 +1,7 @@
 import React from 'react';
 
 const content = (
-  <React.Fragment>
+  <>
     <h2>Polityka prywatności w serwisie torun.onthe.bike</h2>
     <p>
       W ramach serwisu torun.onthe.bike gromadzone są dane automatycznie
@@ -103,7 +103,7 @@ const content = (
     <hr />
     <h2>Administrator</h2>
     <p>Administratorem strony jest Artur Janik, zamieszkały w Toruniu, osoba fizyczna. Kontakt pod adresem <a href="mailto:poczta@torun.onthe.bike">poczta@torun.onthe.bike</a></p>
-  </React.Fragment>
+  </>
 );
 
 export default content;

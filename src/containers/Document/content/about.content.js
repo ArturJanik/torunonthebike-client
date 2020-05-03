@@ -1,7 +1,7 @@
 import React from 'react';
 
 const content = (
-  <React.Fragment>
+  <>
     <h2>W jakim celu powstał projekt toruń.onthe.bike?</h2>
     <p>
       Od dawna brakowało mi aktualnej mapy dróg dla rowerów na terenie Torunia. Jako, że sam poruszam się w mieście głównie na rowerze uznałem, że warto poświęcić wolny czas na zgromadzenie danych i przygotowanie ich interaktywnej prezentacji, tak by każdy mógł sprawdzić aktualny stan infrastruktury rowerowej w Toruniu.
@@ -37,7 +37,7 @@ const content = (
     </p>
     <h3>Po co kolejna mapa? Przecież na GoogleMaps/OpenStreetMap/OpenCycleMaps są już DDR w Toruniu</h3>
     <p>
-      W przypadku wszystkich powyższych źródeł spotkałem się z wieloma nieaktualnymi i brakującymi informacjami. Jeśli wierzyć Google Maps mamy 3 pasy dla rowerów na Al. Solidarności ;) Dodatkowo, chciałem uniknąć mieszania infrastruktury rowerowej z tzw. "drogami przyjaznymi dla rowerzystów" czyli jezdniami z kontraruchem rowerowym, które choć przydatne, nie stanowią w mojej opinii infrastruktury rowerowej.
+      W przypadku wszystkich powyższych źródeł spotkałem się z wieloma nieaktualnymi i brakującymi informacjami. Jeśli wierzyć Google Maps mamy 3 pasy dla rowerów na Al. Solidarności ;) Dodatkowo, chciałem uniknąć mieszania infrastruktury rowerowej z tzw. &quot;drogami przyjaznymi dla rowerzystów&quot; czyli jezdniami z kontraruchem rowerowym, które choć przydatne, nie stanowią w mojej opinii infrastruktury rowerowej.
     </p>
     <h3>Na jakiej podstawie oceniasz jakość nawierzchni?</h3>
     <p>
@@ -53,7 +53,7 @@ const content = (
     <h2>Uwagi końcowe</h2>
     <p>Nośta kaski i złaźta z rowerów na przejściach. Czaszka jest jedna, a dwie tony blachy nie wybaczają ;)</p>
     <p>Pozdrawiam, Artur</p>
-  </React.Fragment>
+  </>
 );
 
 export default content;

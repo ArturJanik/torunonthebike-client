@@ -1,9 +1,9 @@
 import React from 'react';
-import './Footer.css';
+import styles from './Footer.module.css';
 
 import Copyright from './Copyright/Copyright';
 import FooterMenu from './FooterMenu/FooterMenu';
 
-const Footer = () => <footer><FooterMenu /><Copyright /></footer>;
+const Footer = () => <footer className={ styles.footer }><FooterMenu /><Copyright /></footer>;
 
 export default Footer;

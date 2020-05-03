@@ -23,53 +23,53 @@ class MapFilters extends PureComponent {
     }
   ]
 
-  showTypes = ({filterType, setFilterType}) => {
+  showTypes = ({ filterType, setFilterType }) => {
     return this.filterTypes.map(type => {
-      const className = (filterType === type.value) ? 'filter__type--selected' : 'filter__type';
-      return <li key={type.value} className={styles[className]} onClick={() => setFilterType(type.value)}>{type.text}</li>
+      const classNames = `${ styles.filterType } ${ (filterType === type.value ? styles.selected : '') }`;
+      return <li key={ type.value } className={ classNames } onClick={ () => setFilterType(type.value) }>{ type.text }</li>
     })
   }
 
-  showOptions = ({filterType, filterOptions, toggleFilterOption}) => {
+  showOptions = ({ filterType, filterOptions, toggleFilterOption }) => {
     return filterOptions.map(opt => (
-      <FilterOption key={filterType+'-'+opt.value} 
-        clicked={toggleFilterOption} 
-        value={opt.value} 
-        filterType={filterType} 
-        color={(opt.checked) ? opt.color : 'white'} 
-        name={opt.name} 
+      <FilterOption key={ filterType+'-'+opt.value }
+        clicked={ toggleFilterOption }
+        value={ opt.value }
+        filterType={ filterType }
+        color={ (opt.checked) ? opt.color : 'white' }
+        name={ opt.name }
       />
     ))
   }
 
-  toggleFilterVisibility = () => this.setState(prevState => ({showFilters: !prevState.showFilters}));
+  toggleFilterVisibility = () => this.setState(prevState => ({ showFilters: !prevState.showFilters }));
 
   render(){
-    const filterClassname = this.state.showFilters ? 'filter--show' : 'filter';
+    const filterClassnames = this.state.showFilters ? 'filterVisible' : 'filter';
     return(
-      <React.Fragment>
-        <FilterButton clicked={this.toggleFilterVisibility} />
-        <div className={styles[filterClassname]}>
-          <p className={styles['filter__title']}>Rodzaj filtra:</p>
+      <>
+        <FilterButton clicked={ this.toggleFilterVisibility } />
+        <div className={ styles[ filterClassnames ] }>
+          <p className={ styles.filterTitle }>Rodzaj filtra:</p>
           <MapConsumer>
             {ctx => (
-              <React.Fragment>
-                <ul className={styles['filter__types']}>
+              <>
+                <ul className={ styles.filterTypes }>
                   {this.showTypes(ctx)}
                 </ul>
-                {(ctx.filterType !== 'default') ? (
+                {(ctx.filterType !== 'default') && (
                   <React.Fragment>
-                    <p className={styles['filter__title']}>Filtruj typ:</p>
-                    <div className={styles['filter__options']}>
+                    <p className={ styles.filterTitle }>Filtruj typ:</p>
+                    <div className={ styles.filterOptions }>
                       {this.showOptions(ctx)}
                     </div>
                     </React.Fragment>
-                ) : null}
-              </React.Fragment>
+                )}
+              </>
             )}
           </MapConsumer>
         </div>
-      </React.Fragment>
+      </>
     )
   }
 }

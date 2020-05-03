@@ -1,28 +1,23 @@
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video {
-  margin:0;
-  padding:0;
-  border:0;
-  font:inherit;
-  vertical-align:baseline;
+a,abbr,acronym,address,applet,article,b,big,caption,center,cite,code,dd,del,dfn,dl,dt,em,embed,fieldset,footer,form,h1,h2,h3,h4,h5,h6,header,html,i,iframe,img,ins,kbd,label,legend,li,nav,object,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,u,ul,var {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
-  display:block;
+article,footer,header,nav,section {
+  display: block;
 }
-html{-ms-text-size-adjust:none;-webkit-text-size-adjust:none}
-body{line-height:1.42em;overflow-x:hidden}
-ul{list-style:none}
-ol{list-style:decimal}
-blockquote,q{quotes:none}
-blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}
-table{
-  border-collapse:collapse;
-  border-spacing:0;
+html {
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
 }
-audio,
-canvas,
-video {
-  display: inline-block;
-  max-width: 100%;
+body {
+  line-height: 1.42em;
+  overflow-x: hidden;
+}
+ul {
+  list-style: none;
 }
 a {
   color:inherit;
@@ -32,63 +27,24 @@ a:hover,
 a:active {
   outline: 0;
 }
-b,
 strong {
-  font-weight: 700;
-}
-cite,
-dfn,
-em,
-i {
-  font-style: italic;
+  font-weight: 600;
 }
 
 img {
   -ms-interpolation-mode: bicubic;
-  border: 0;
   vertical-align: middle;
 }
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  cursor: pointer;
-}
 
-button[disabled],
 input[disabled] {
   cursor: default;
 }
-input[type="checkbox"],
-input[type="radio"] {
-  padding: 0;
-}
-button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
 
-blockquote,
-q {
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-
-button,
 input,
-select,
 textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -98,7 +54,6 @@ textarea {
   max-width: 100%;
   vertical-align: baseline;
 }
-button,
 input {
   line-height: 1.42em;
 }
@@ -118,11 +73,6 @@ textarea {
   box-sizing:border-box;
 }
 
-body, div, p {
-  margin: 0;
-  padding: 0;
-}
-
 html {
   font-size: 62.5%;
 }
@@ -139,10 +89,6 @@ body {
 
 #map {
   z-index: 10;
-}
-
-.popup {
-  font-family: 'Lato', sans-serif;
 }
 
 .unhoverable {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import L from 'leaflet';
 import 'leaflet-geometryutil';
 import 'leaflet-almostover';
@@ -10,7 +11,7 @@ class MapWrapper extends Component {
   componentDidMount(){
     const ctx = this.context;
     const mapOptions = {
-      center: [53.025, 18.62],
+      center: [ 53.025, 18.62 ],
       zoom: 14,
       zoomControl: false
     }
@@ -24,12 +25,19 @@ class MapWrapper extends Component {
     return (
       <MapConsumer>
         {ctx => (
-          <div id="map" {...this.props}>{(ctx.map !== null) ? this.props.children : null}</div>
+          <div id="map" { ...this.props }>{ (ctx.map !== null) && this.props.children }</div>
         )}
       </MapConsumer>
     );
   }
 }
 MapWrapper.contextType = MapContext;
+
+MapWrapper.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
+};
 
 export default MapWrapper;

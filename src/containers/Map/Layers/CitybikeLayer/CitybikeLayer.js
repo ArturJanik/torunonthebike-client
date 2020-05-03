@@ -13,18 +13,17 @@ const urls = {
 class CitybikeLayer extends Component {
   state = {
     localsValid: false,
-
     leafletStationsLayer: null,
     stationsData: null,
     stationsLoading: false,
     stationsError: null
-  }
+  };
 
   icons = [
     L.divIcon({
-      iconSize: [48, 48], iconAnchor: [24, 24], popupAnchor: [0, -32], className: styles['icon--station']
+      iconSize: [ 48, 48 ], iconAnchor: [ 24, 24 ], popupAnchor: [ 0, -32 ], className: styles.icon
     })
-  ]
+  ];
 
   async componentDidMount(){
     try {
@@ -33,16 +32,15 @@ class CitybikeLayer extends Component {
         this.checkIfDataInSync()
         .then(() => {
           this.drawStationsLayer();
-        }).catch(err => {this.setState({stationsError: err, stationsLoading: false})});
+        }).catch(err => { this.setState({ stationsError: err, stationsLoading: false }) });
       } else {
         this.fetchStationsData()
         .then(() => {
           this.drawStationsLayer();
-        }).catch(err => {this.setState({stationsError: err, stationsLoading: false})});
+        }).catch(err => { this.setState({ stationsError: err, stationsLoading: false }) });
       }
     } catch (error) {
-      console.log(error);
-      this.setState({stationsError: error, stationsLoading: false})
+      this.setState({ stationsError: error, stationsLoading: false })
     }
   }
 
@@ -59,10 +57,10 @@ class CitybikeLayer extends Component {
   }
 
   fetchStationsData = () => {
-    this.setState({stationsLoading: true});
+    this.setState({ stationsLoading: true });
     return axios.get(urls.getdata)
     .then(res => {
-      const {stations, modificationDate} = res.data;
+      const { stations, modificationDate } = res.data;
       if(stations.length > 0 && modificationDate !== null){
         localStorage.setItem('stationsData', JSON.stringify(stations));
         localStorage.setItem('stationsLastChange', modificationDate);
@@ -78,12 +76,12 @@ class CitybikeLayer extends Component {
   checkIfDataInSync = () => {
     const lastLocalChange = localStorage.getItem('stationsLastChange');
     
-    return axios.post(urls.uptodate, {lastLocalChange})
+    return axios.post(urls.uptodate, { lastLocalChange })
     .then(res => {
       const upToDate = res.data;
       if(upToDate){
         const localStationsData = localStorage.getItem('stationsData');
-        return this.setState({stationsData: JSON.parse(localStationsData)});
+        return this.setState({ stationsData: JSON.parse(localStationsData) });
       } else {
         return this.fetchStationsData();
       }
@@ -93,13 +91,13 @@ class CitybikeLayer extends Component {
 
   drawStationsLayer = () => {
     if(this.state.stationsError || this.state.stationsData === null) return;
-    const {map} = this.context;
+    const { map } = this.context;
 
     const stations = L.layerGroup(this.state.stationsData.map(station => {
-      const popup = createPopup('station', {name: station.name});
-      return L.marker([station.lat, station.lng], {icon: this.icons[0]}).bindPopup(popup, {className: 'popup', minWidth: 200});
+      const popup = createPopup('station', { name: station.name });
+      return L.marker([ station.lat, station.lng ], { icon: this.icons[ 0 ] }).bindPopup(popup, { className: 'popup', minWidth: 200 });
     }));
-    this.setState({leafletStationsLayer: stations});
+    this.setState({ leafletStationsLayer: stations });
     stations.addTo(map);
   }
 

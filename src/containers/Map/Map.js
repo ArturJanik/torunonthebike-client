@@ -18,28 +18,27 @@ class Map extends Component {
     citybikesVisible: false
   }
 
-  componentDidMount = () => document.title = 'Toruń.onthe.bike';
-
   toggleAlerts = () => {
-    this.setState(prevState => ({alertsVisible: !prevState.alertsVisible}))
+    this.setState(prevState => ({ alertsVisible: !prevState.alertsVisible }));
   }
 
   toggleCitybikes = () => {
-    this.setState(prevState => ({citybikesVisible: !prevState.citybikesVisible}))
+    this.setState(prevState => ({ citybikesVisible: !prevState.citybikesVisible }));
   }
 
   render(){
+    document.title = 'Interaktywna mapa rowerowa Torunia - Toruń.onthe.bike';
     return(
-      <section className={styles['map__section']}>
+      <section className={ styles.mapSection }>
         <MapProvider>
-          <MapWrapper className={styles['map__wrapper']}>
+          <MapWrapper className={ styles.mapWrapper }>
             <TileLayer />
             <RouteLayer />
             <EventLayer />
-            {this.state.alertsVisible ? <AlertLayer /> : null}
-            {this.state.citybikesVisible ? <CitybikeLayer /> : null}
+            { this.state.alertsVisible && <AlertLayer /> }
+            { this.state.citybikesVisible && <CitybikeLayer /> }
           </MapWrapper>
-          <ControlLayer toggleAlerts={this.toggleAlerts} toggleCitybikes={this.toggleCitybikes} />
+          <ControlLayer toggleAlerts={ this.toggleAlerts } toggleCitybikes={ this.toggleCitybikes } />
           <MessagePopup />
         </MapProvider>
       </section>

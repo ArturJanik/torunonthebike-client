@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export const MapContext = React.createContext();
 export const MapConsumer = MapContext.Consumer;
@@ -17,13 +18,13 @@ export class MapProvider extends Component {
   }
 
   setMap = (mapObj) => {
-    if(this.state.map === null) this.setState({map: mapObj});
+    if(this.state.map === null) this.setState({ map: mapObj });
   }
 
   setFilterType = (filterType) => {
     if(this.state.filterType !== filterType){
       const filterOptions = this.getDefaultFilterOptions(filterType);
-      this.setState({filterType, filterOptions})
+      this.setState({ filterType, filterOptions })
     }
   }
   
@@ -70,15 +71,22 @@ export class MapProvider extends Component {
   }
 
   toggleFilterOption = (value) => {
-    const modifiedOptions = this.state.filterOptions.map(opt => (opt.value === value) ? {...opt, checked: !opt.checked} : opt);
-    this.setState({filterOptions: modifiedOptions})
+    const modifiedOptions = this.state.filterOptions.map(opt => (opt.value === value) ? { ...opt, checked: !opt.checked } : opt);
+    this.setState({ filterOptions: modifiedOptions })
   }
 
   render(){
     return (
-      <MapContext.Provider value={this.state}>
-        {this.props.children}
+      <MapContext.Provider value={ this.state }>
+        { this.props.children }
       </MapContext.Provider>
     )
   }
 }
+
+MapProvider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
+};
