@@ -1,19 +1,17 @@
-.menu--footer {
-}
-.menu--footer ul {
+.menu__footer {
   align-items: center;
   display: flex;
 }
-.menu-item {
+.menu__item {
   display: inline-block;
   font-size: 1.4rem;
   padding: 0 10px;
   transition: color .2s ease;
 }
-.menu-item:not(:last-child){
+.menu__item:not(:last-child){
   border-right: 1px solid #ccc;
 }
-.menu-item:hover {
+.menu__item:hover {
   color: #209fd9;
   text-decoration: underline;
 }

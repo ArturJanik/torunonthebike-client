@@ -48,11 +48,11 @@
   flex: 0 0 50px;
   max-height: 50px;
 }
-.zoom--in {
+.zoom__in {
   composes: zoom;
   margin-bottom: 10px;
 }
-.zoom--out {
+.zoom__out {
   composes: zoom;
 }
 

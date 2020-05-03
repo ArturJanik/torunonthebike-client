@@ -41,14 +41,14 @@ class RouteLayer extends Component {
     const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001/api/bikelanes' : 'https://api.onthe.bike/api/bikelanes';
     axios.get(url)
     .then(res => {
-      const routes = res.data[0];
-      const {last_changed_at} = res.data[1];
-      if(routes !== undefined && routes !== null){
+      const routes = res.data[ 0 ];
+      if(routes){
+        const { last_changed_at } = res.data[ 1 ];
         const parsedRoutes = this.parseRoutesData(routes);
         localStorage.setItem('routesData', JSON.stringify({ type: 'FeatureCollection', features: parsedRoutes }));
         localStorage.setItem('routesLastChange', last_changed_at);
 
-        this.setState({ routes: { type: 'FeatureCollection', features: parsedRoutes }});
+        this.setState({ routes: { type: 'FeatureCollection', features: parsedRoutes } });
       }
     }).catch(error => {
       console.log(error);
@@ -56,69 +56,61 @@ class RouteLayer extends Component {
   }
 
   parseRoutesData = (routesData) => {
-    return routesData.map((route) => {
-      return {
-        type: 'Feature',
-        properties: {
-          street: route['street'],
-          roadlane: route['roadlane'],
-          nameFrom: route['name_from'],
-          nameTo: route['name_to'],
-          type: route['type'],
-          surface: route['surface'],
-          quality: route['quality']
-        },
-        geometry: {
-          type: 'LineString',
-          coordinates: JSON.parse(route['points'])
+    return routesData.map((route) => ({
+      type: 'Feature',
+      properties: {
+        street: route[ 'street' ],
+        roadlane: route[ 'roadlane' ],
+        nameFrom: route[ 'name_from' ],
+        nameTo: route[ 'name_to' ],
+        type: route[ 'type' ],
+        surface: route[ 'surface' ],
+        quality: route[ 'quality' ]
+      },
+      geometry: {
+        type: 'LineString',
+        coordinates: JSON.parse(route[ 'points' ])
+      }
+    }));
+  }
+
+  styleRoutes = (feature, layer) => {
+    const { filterType, filterOptions } = this.context;
+    filterOptions.forEach(opt => {
+      if(opt.value.toString() === feature.properties[ filterType ].toString()){
+        if(opt.checked === true){
+          feature.currentColor = opt.color;
+          layer.setStyle({ color: opt.color, className: '' })
+        } else {
+          layer.setStyle({ opacity: 0, className: 'unhoverable' })
         }
       }
     });
   }
 
-  styleRoutes = (feature, layer) => {
-    const {filterType, filterOptions} = this.context;
-    if(filterType !== 'default'){
-      filterOptions.forEach(opt => {
-        if(opt.value.toString() === feature.properties[filterType].toString()){
-          if(opt.checked === true){
-            feature.currentColor = opt.color;
-            layer.setStyle({ color: opt.color, className: '' })
-          } else {
-            layer.setStyle({ opacity: 0, className: 'unhoverable' })
-          }
-        }
-      })
-    }
-  }
+  render = () => {
+    if(this.state.routes === null) return null;
 
-  showRoutes = () => {
-    const {filterType} = this.context;
-    if(this.state.routes !== null){
-      let routeOptions = {
-        color: '#006699',
+    const { filterType } = this.context;
+    let routeOptions = {
+      color: '#006699',
+      weight: '3',
+      opacity: '0.9',
+      bubblingMouseEvents: false,
+      onEachFeature: (feature, layer) => {
+        feature.currentColor = '#006699';
+      }
+    }
+    if(filterType && filterType !== 'default'){
+      routeOptions = {
         weight: '3',
         opacity: '0.9',
         bubblingMouseEvents: false,
-        onEachFeature: (feature, layer) => {
-          feature.currentColor = '#006699';
-        }
+        onEachFeature: this.styleRoutes
       }
-      if(filterType && filterType !== 'default'){
-        routeOptions = {
-          weight: '3',
-          opacity: '0.9',
-          bubblingMouseEvents: false,
-          onEachFeature: this.styleRoutes
-        }
-      }
-      return <GeoJSON data={this.state.routes} options={routeOptions} />;
-    } else {
-      return null;
     }
+    return <GeoJSON data={ this.state.routes } options={ routeOptions } />;
   }
-
-  render = () => this.showRoutes();
 }
 RouteLayer.contextType = MapContext;
 

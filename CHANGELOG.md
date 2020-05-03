@@ -1,3 +1,23 @@
+## 1.2.0
+
+### Changed
+
+* ejected project
+
+### Added
+
+* added eslint configuration
+* added prop-types library and proptypes to components
+
+### Removed
+
+* removed redundant font files
+* removed redundant image file
+
+### Fixed
+
+* eslint errors fixed
+
 ## 1.1.2
 
 ### Changed

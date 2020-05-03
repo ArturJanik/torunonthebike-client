@@ -22,7 +22,7 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 const app = (
-  <Router history={history}>
+  <Router history={ history }>
     <App />
   </Router>
 );

@@ -9,9 +9,9 @@ class ZoomControl extends Component {
 
   render() {
     return (
-      <div className={styles['zoom__controls']}>
-        <div className={styles['zoom--in']} onClick={this.zoomIn}><span>+</span></div>
-        <div className={styles['zoom--out']} onClick={this.zoomOut}><span>-</span></div>
+      <div className={ styles.zoom__controls }>
+        <div className={ styles.zoom__in } onClick={ this.zoomIn }><span>+</span></div>
+        <div className={ styles.zoom__out } onClick={ this.zoomOut }><span>-</span></div>
       </div>
     )
   }

@@ -1,4 +1,4 @@
-.map__section {
+.mapSection {
   background: #fff;
   bottom: 0;
   height: 100%;
@@ -10,13 +10,13 @@
   width: 100%;
   z-index: 5;
 }
-.map__wrapper {
+.mapWrapper {
   height: 100%;
   width: 100%;
 }
 
 @media all and (max-width: 480px){
-  .map__section {
+  .mapSection {
     padding-bottom: 35px;
   }
 }

@@ -3,19 +3,19 @@ import styles from './RoutePopup.module.css';
 const getType = (type) => {
   switch (String(type)) {
     case '0':
-      return "Droga dla rowerów";
+      return 'Droga dla rowerów';
     case '1':
-      return "Droga dla rowerów i pieszych";
+      return 'Droga dla rowerów i pieszych';
     case '2':
-      return "Kontrapas rowerowy";
+      return 'Kontrapas rowerowy';
     case '3':
-      return "Pas rowerowy";
+      return 'Pas rowerowy';
     case '4':
-      return "Chodnik z dopuszczonym ruchem rowerów";
+      return 'Chodnik z dopuszczonym ruchem rowerów';
     case '5':
-      return "Jezdnia z kontraruchem";
+      return 'Jezdnia z kontraruchem';
     case '9':
-      return "Przejazd rowerowy";
+      return 'Przejazd rowerowy';
     default:
       break;
   }
@@ -24,21 +24,21 @@ const getType = (type) => {
 const getSurface = (surface) => {
   switch (String(surface)) {
     case '0':
-      return "Asfalt";
+      return 'Asfalt';
     case '1':
-      return "Kostka bauma (fazowana)";
+      return 'Kostka bauma (fazowana)';
     case '2':
-      return "Płyta chodnikowa mała";
+      return 'Płyta chodnikowa mała';
     case '3':
-      return "Płyta chodnikowa duża";
+      return 'Płyta chodnikowa duża';
     case '4':
-      return "Utwardzona naturalna";
+      return 'Utwardzona naturalna';
     case '5':
-      return "Luźna (Szuter/Piach)";
+      return 'Luźna (Szuter/Piach)';
     case '6':
-      return "Inna";
+      return 'Inna';
     case '7':
-      return "Kostka bauma (niefaz.)";
+      return 'Kostka bauma (niefaz.)';
     default:
       break;
   }
@@ -47,57 +47,57 @@ const getSurface = (surface) => {
 const getQuality = (quality) => {
   switch (String(quality)) {
     case '0':
-      return "Brak informacji";
+      return 'Brak informacji';
     case '1':
-      return "Nieprzejezdna";
+      return 'Nieprzejezdna';
     case '2':
-      return "Popękana/zniszczona";
+      return 'Popękana/zniszczona';
     case '3':
-      return "Miejscowe uszkodzenia";
+      return 'Miejscowe uszkodzenia';
     case '4':
-      return "Drobne ubytki";
+      return 'Drobne ubytki';
     case '5':
-      return "Idealna";
+      return 'Idealna';
     default:
       break;
   }
 }
 
-const createStreet = (name) => `<p class="${styles.street}">${name}</p>`;
+const createStreet = (name) => `<p class="${ styles.street }">${ name }</p>`;
 
-const createFromTo = ({nameFrom, nameTo, type}) => {
-  let inner = `<strong>od</strong> <span class="from">${nameFrom}</span> <strong>do</strong> <span class="to">${nameTo}</span>`;
+const createFromTo = ({ nameFrom, nameTo, type }) => {
+  let inner = `<strong>od</strong> <span class="from">${ nameFrom }</span> <strong>do</strong> <span class="to">${ nameTo }</span>`;
   if(type === '9') {
-    inner = `<span class="from">${nameFrom}</span> <span class="to">${nameTo}</span>`;
+    inner = `<span class="from">${ nameFrom }</span> <span class="to">${ nameTo }</span>`;
   }
-  return `<p class="${styles.fromTo}">${inner}</p>`;
+  return `<p class="${ styles.fromTo }">${ inner }</p>`;
 }
 
 const createType = (lanetype) => {
   if(lanetype === '9') return null;
-  return `<p class="${styles.type}"><strong>Typ:</strong> <span>${getType(lanetype)}</span></p>`;
+  return `<p class="${ styles.type }"><strong>Typ:</strong> <span>${ getType(lanetype) }</span></p>`;
 }
 
-const createSurface = (surfaceType) => `<p class="${styles.surface}"><strong>Nawierzchnia:</strong> <span>${getSurface(surfaceType)}</span></p>`;
+const createSurface = (surfaceType) => `<p class="${ styles.surface }"><strong>Nawierzchnia:</strong> <span>${ getSurface(surfaceType) }</span></p>`;
 
-const createQuality = (qualityType) => `<p class="${styles.quality}"><strong>Jakość:</strong> <span>${getQuality(qualityType)}</span></p>`;
+const createQuality = (qualityType) => `<p class="${ styles.quality }"><strong>Jakość:</strong> <span>${ getQuality(qualityType) }</span></p>`;
 
 const createPopup = (popupType, properties) => {
+  const { name, description, street, type, surface, quality } = properties;
   switch (popupType.toString()) {
     case 'station':
-      return `<div><p class="${styles.station}">${properties.name}</p></div>`;
+      return `<div><p class="${ styles.station }">${ name }</p></div>`;
 
     case 'alert':
-      return `<div><p class="${styles.alert}">${properties.description}</p></div>`;
+      return `<div><p class="${ styles.alert }">${ description }</p></div>`;
   
     default:
-      const {street, type, surface, quality} = properties;
       return `<div class="popupStreet">
-        ${createStreet(street)}
-        ${createFromTo(properties)}
-        ${createType(type)}
-        ${createSurface(surface)}
-        ${createQuality(quality)}
+        ${ createStreet(street) }
+        ${ createFromTo(properties) }
+        ${ createType(type) }
+        ${ createSurface(surface) }
+        ${ createQuality(quality) }
       </div>`;
   }
 }
