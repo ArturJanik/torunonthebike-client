@@ -1,22 +1,20 @@
-.mapSection {
+.footer {
   composes: bg-color--white from '../../mixins/color.module.css';
+  composes: display--flex from '../../mixins/display.module.css';
   composes: position--fixed from '../../mixins/position.module.css';
   composes: width--fluid from '../../mixins/width.module.css';
+  border-top: 1px solid #ddd;
   bottom: 0;
-  height: 100%;
+  height: 45px;
+  justify-content: space-between;
   left: 0;
-  padding-bottom: 45px;
-  right: 0;
-  top: 0;
-  z-index: 5;
-}
-.mapWrapper {
-  composes: width--fluid from '../../mixins/width.module.css';
-  height: 100%;
+  padding: 10px;
+  z-index: 10;
 }
 
 @media all and (max-width: 480px){
-  .mapSection {
-    padding-bottom: 35px;
+  .footer {
+    height: 35px;
+    padding: 5px;
   }
 }

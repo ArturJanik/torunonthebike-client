@@ -15,13 +15,13 @@ class AlertLayer extends Component {
 
   icons = [
     L.divIcon({
-      iconSize: [ 48, 48 ], iconAnchor: [ 24, 24 ], popupAnchor: [ 0, -32 ], className: styles.icon__alert1
+      iconSize: [ 48, 48 ], iconAnchor: [ 24, 24 ], popupAnchor: [ 0, -32 ], className: styles.alert_info
     }),
     L.divIcon({
-      iconSize: [ 48, 48 ], iconAnchor: [ 24, 24 ], popupAnchor: [ 0, -32 ], className: styles.icon__alert2
+      iconSize: [ 48, 48 ], iconAnchor: [ 24, 24 ], popupAnchor: [ 0, -32 ], className: styles.alert_works
     }),
     L.divIcon({
-      iconSize: [ 48, 48 ], iconAnchor: [ 24, 24 ], popupAnchor: [ 0, -32 ], className: styles.icon__alert3
+      iconSize: [ 48, 48 ], iconAnchor: [ 24, 24 ], popupAnchor: [ 0, -32 ], className: styles.alert_visibility
     }),
   ];
 

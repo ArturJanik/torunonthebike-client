@@ -1,11 +1,11 @@
 .logo {
-  display: block;
+  composes: display--block from '../../../mixins/display.module.css';
   max-width: 160px;
 }
-.logo img {
-  display: block;
+.image {
+  composes: display--block from '../../../mixins/display.module.css';
+  composes: width--fluid from '../../../mixins/width.module.css';
   height: auto;
-  width: 100%;
 }
 
 @media all and (max-width: 640px){

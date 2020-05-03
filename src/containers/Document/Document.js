@@ -44,10 +44,10 @@ class Document extends Component {
 
   render() {
     return(
-      <section className={ styles.doc__container }>
-        <h1 className={ styles.doc__title }>{ this.state.title }</h1>
+      <section className={ styles.document }>
+        <h1 className={ styles.title }>{ this.state.title }</h1>
         { this.state.loaded && (
-          <div className={ styles.doc__content }>
+          <div className={ styles.content }>
             {this.showContent()}
           </div>
         ) }

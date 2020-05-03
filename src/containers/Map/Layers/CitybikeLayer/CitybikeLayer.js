@@ -21,7 +21,7 @@ class CitybikeLayer extends Component {
 
   icons = [
     L.divIcon({
-      iconSize: [ 48, 48 ], iconAnchor: [ 24, 24 ], popupAnchor: [ 0, -32 ], className: styles.icon__station
+      iconSize: [ 48, 48 ], iconAnchor: [ 24, 24 ], popupAnchor: [ 0, -32 ], className: styles.icon
     })
   ];
 

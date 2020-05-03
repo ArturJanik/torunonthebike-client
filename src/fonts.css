@@ -1,6 +1,5 @@
 @font-face {
   font-family: 'Lato';
-  src: url('./assets/fonts/LatoLatin-Regular.woff');
   src: url('./assets/fonts/LatoLatin-Regular.woff2') format('woff2'),
        url('./assets/fonts/LatoLatin-Regular.woff') format('woff');
   font-style: normal;
@@ -9,7 +8,6 @@
 }
 @font-face {
   font-family: 'Lato';
-  src: url('./assets/fonts/LatoLatin-Semibold.woff');
   src: url('./assets/fonts/LatoLatin-Semibold.woff2') format('woff2'),
        url('./assets/fonts/LatoLatin-Semibold.woff') format('woff');
   font-style: normal;
@@ -18,19 +16,9 @@
 }
 @font-face {
   font-family: 'Lato';
-  src: url('./assets/fonts/LatoLatin-Heavy.woff');
   src: url('./assets/fonts/LatoLatin-Heavy.woff2') format('woff2'),
        url('./assets/fonts/LatoLatin-Heavy.woff') format('woff');
   font-style: normal;
   font-weight: 800;
-  text-rendering: optimizeLegibility;
-}
-@font-face {
-  font-family: 'Lato';
-  src: url('./assets/fonts/LatoLatin-Light.woff');
-  src: url('./assets/fonts/LatoLatin-Light.woff2') format('woff2'),
-       url('./assets/fonts/LatoLatin-Light.woff') format('woff');
-  font-style: normal;
-  font-weight: 300;
   text-rendering: optimizeLegibility;
 }

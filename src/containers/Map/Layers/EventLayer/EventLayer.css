@@ -1,3 +1,6 @@
+.popup {
+  font-family: 'Lato', sans-serif;
+}
 .popup .leaflet-popup-content-wrapper {
   border-radius: 4px;
 }

@@ -1,17 +1,17 @@
-.menu__footer {
+.menu {
+  composes: display--flex from '../../../mixins/display.module.css';
   align-items: center;
-  display: flex;
 }
-.menu__item {
-  display: inline-block;
+.menuItem {
+  composes: display--inline-block from '../../../mixins/display.module.css';
   font-size: 1.4rem;
   padding: 0 10px;
   transition: color .2s ease;
 }
-.menu__item:not(:last-child){
+.menuItem:not(:last-child){
   border-right: 1px solid #ccc;
 }
-.menu__item:hover {
+.menuItem:hover {
   color: #209fd9;
   text-decoration: underline;
 }

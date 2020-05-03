@@ -1,44 +1,43 @@
 .filter {
-  background: #fff;
+  composes: bg-color--white from '../../../../../mixins/color.module.css';
+  composes: position--fixed from '../../../../../mixins/position.module.css';
   border-radius: 5px;
   box-shadow: 0px 3px 1px 0px rgba(0,0,0,.3);
   padding: 10px 15px;
-  position: fixed;
   right: 10px;
   top: 10px;
   width: 240px;
   z-index: 10;
 }
-.filter__title {
+.filterTitle {
+  composes: font-weight--800 from '../../../../../mixins/typography.module.css';
   border-bottom: 2px solid #ddd;
-  font-weight: 800;
   padding: 5px 0;
   text-transform: uppercase;
 }
-.filter__types {
+.filterTypes {
   padding: 10px 0;
 }
-.filter__type {
-  background: #eee;
+.filterType {
+  composes: bg-color--gray from '../../../../../mixins/color.module.css';
+  composes: cursor--pointer from '../../../../../mixins/misc.module.css';
+  composes: font-weight--600 from '../../../../../mixins/typography.module.css';
   border-bottom: 2px solid #ddd;
-  cursor: pointer;
   font-size: 1.4rem;
-  font-weight: 600;
   padding: 5px 10px;
   transition: padding .2s ease;
 }
-.filter__type--selected {
-  composes: filter__type;
-  background: #2788ba;
+.selected {
+  composes: color--white from '../../../../../mixins/color.module.css';
+  composes: bg-color--main from '../../../../../mixins/color.module.css';
   border-bottom: 2px solid #006699;
-  color: #fff;
 }
-.filter__type:not(.filter__type--selected):hover {
+.filterType:not(.selected):hover {
   background: #fff;
   color: #666;
   padding-left: 20px;
 }
-.filter__options {
+.filterOptions {
   padding: 10px 0;
 }
 
@@ -52,11 +51,11 @@
     top: 90px;
     z-index: 20;
   }
-  .filter--show {
+  .filterVisible {
     composes: filter;
     transform: translateX(0%);
   }
-  .filter__title {
+  .filterTitle {
     display: none;
   }
 }
@@ -65,7 +64,7 @@
   .filter {
     padding: 5px 8px;
   }
-  .filter__types {
+  .filterTypes {
     padding: 5px 0;
   }
 }

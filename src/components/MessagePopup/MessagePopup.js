@@ -33,16 +33,16 @@ class MessagePopup extends Component {
   showPopup = () => this.setState({ isVisible: true });
   hidePopup = () => this.setState({ isVisible: false });
 
-  showError = () => <p className={ styles.popup__error }>{ this.state.error }</p>
-  showSuccess = () => <p className={ styles.popup__success }>Wiadomość wysłana pomyślnie! Dzięki!</p>
+  showError = () => <p className={ styles.error }>{ this.state.error }</p>
+  showSuccess = () => <p className={ styles.success }>Wiadomość wysłana pomyślnie! Dzięki!</p>
 
   showForm = () => (
     <>
-      <p className={ styles.popup__title }>Zgłoś uwagi i pomóż w tworzeniu mapy</p>
-      <p className={ styles.popup__description }>Jeśli zauważycie jakieś nieścisłości, błędy czy braki, lub jeśli macie jakieś propozycje co do mapy itp. - proszę o wypełnienie anonimowego formularza. Postaram się w miarę regularnie aktualizować mapę.</p>
-      <textarea placeholder="Twoje uwagi" className={ styles.popup__textarea } onChange={ this.handleTextareaChange }></textarea>
+      <p className={ styles.title }>Zgłoś uwagi i pomóż w tworzeniu mapy</p>
+      <p className={ styles.description }>Jeśli zauważycie jakieś nieścisłości, błędy czy braki, lub jeśli macie jakieś propozycje co do mapy itp. - proszę o wypełnienie anonimowego formularza. Postaram się w miarę regularnie aktualizować mapę.</p>
+      <textarea placeholder="Twoje uwagi" className={ styles.textarea } onChange={ this.handleTextareaChange }></textarea>
       { this.state.error && this.showError() }
-      <div className={ styles.popup__button } onClick={ this.sendForm }>Wyślij</div>
+      <div className={ styles.button } onClick={ this.sendForm }>Wyślij</div>
     </>
   )
 
@@ -82,14 +82,14 @@ class MessagePopup extends Component {
           onExit={ this.handleExit }
           onExited={ this.handleExited }
         >
-          <div className={ styles.popup__overlay } onClick={ this.hidePopup }>
+          <div className={ styles.overlay } onClick={ this.hidePopup }>
             <CSSTransition 
               in={ this.state.showPopup } 
               timeout={ 300 } 
               classNames="popup" 
               mountOnEnter unmountOnExit
             >
-              <div className={ styles.popup__container } onClick={ (e) => e.stopPropagation() }>
+              <div className={ styles.container } onClick={ (e) => e.stopPropagation() }>
                 {this.state.success ? this.showSuccess() : this.showForm()}
               </div>
             </CSSTransition>

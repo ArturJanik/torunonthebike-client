@@ -86,10 +86,10 @@ const createPopup = (popupType, properties) => {
   const { name, description, street, type, surface, quality } = properties;
   switch (popupType.toString()) {
     case 'station':
-      return `<div><p class="${ styles.station }">${ name }</p></div>`;
+      return `<div><p class="${ styles.text }">${ name }</p></div>`;
 
     case 'alert':
-      return `<div><p class="${ styles.alert }">${ description }</p></div>`;
+      return `<div><p class="${ styles.text }">${ description }</p></div>`;
   
     default:
       return `<div class="popupStreet">

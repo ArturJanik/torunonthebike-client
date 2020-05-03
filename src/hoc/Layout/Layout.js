@@ -9,7 +9,7 @@ class Layout extends Component {
     return (
       <>
         <Header/>
-        {this.props.children}
+        { this.props.children }
         <Footer />
         <CookiePrompt />
       </>

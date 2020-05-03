@@ -20,12 +20,12 @@ class CookiePrompt extends Component {
   render(){
     if(!this.state.showCookiePrompt) return '';
     return (
-      <div className={ styles.cookies__wrapper }>
-        <div className={ styles.cookies__text }>
+      <div className={ styles.wrapper }>
+        <div className={ styles.content }>
           <p>Ta strona korzysta z plików cookies, które wykorzystujemy do gromadzenia statystyk na temat ruchu na stronie i usprawniania działania strony.</p>
-          <Link to="/polityka-prywatnosci" title="Polityka Prywatności i Cookies" className={ styles.cookies__link }>Dowiedz się więcej o naszej polityce prywatności</Link>
+          <Link to="/polityka-prywatnosci" title="Polityka Prywatności i Cookies" className={ styles.link }>Dowiedz się więcej o naszej polityce prywatności</Link>
         </div>
-        <div className={ styles.cookies__btn } onClick={ this.acceptCookies }>Rozumiem i akceptuję</div>
+        <div className={ styles.button } onClick={ this.acceptCookies }>Rozumiem i akceptuję</div>
       </div>
     )
   }
