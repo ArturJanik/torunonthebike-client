@@ -1,3 +1,24 @@
+## Roadmap
+
+* replacing axios with Fetch API
+* complete rewrite of app to React 18 and Typescript
+* slimming down dependency tree (using pure React instead of create-react-app)
+* replacing dependencies that are no longer maintained (like leaflet-almostover) with native solutions
+
+## 1.4.0
+
+### Added
+
+* added __miragejs__ `0.1.45`
+* dev server with dummy data
+
+### Changed
+
+* remanaged packages in package.json
+* turned off message popup
+* updated __axios__ `0.19.0` -> `0.19.2`
+* updated __leaflet__ `1.7.0` -> `1.8.0`
+
 ## 1.3.0
 
 ### Changed

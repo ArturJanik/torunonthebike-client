@@ -7,3 +7,9 @@ It's based on Leaflet.js map library using React context API to make it availabl
 
 1. I could not use react-leaflet library here, as it was incompatible with Leaflet.js extension libraries required for this project to run. That's why I had to use pure Leaflet.js lib which in result produced some less-react'ish code that could use some heavy refactoring - this is something I will have to work on in future updates.
 2. I've decided to use pure OpenStreetMaps tile server as this website will not hit high traffic - it's local, relevant to only one city, and it's not including any functionalities that would justify using this website often by anyone. Downside to this is speed of tile server, which would be way better with Mapbox service - but first I need to gather long-term traffic data to decide.
+
+## Installation
+
+> npm i --legacy-peer-deps
+
+We need to install legacy dependencies to run leaflet-almostover plugin (it is based on legacy version of leaflet).

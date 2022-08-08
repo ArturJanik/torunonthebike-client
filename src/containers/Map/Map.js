@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Map.module.css';
 
-import MessagePopup from '../../components/MessagePopup/MessagePopup';
+// import MessagePopup from '../../components/MessagePopup/MessagePopup';
 import MapWrapper from './MapWrapper/MapWrapper'
 import TileLayer from './Layers/TileLayer/TileLayer'
 import RouteLayer from './Layers/RouteLayer/RouteLayer'
@@ -39,7 +39,7 @@ class Map extends Component {
             { this.state.citybikesVisible && <CitybikeLayer /> }
           </MapWrapper>
           <ControlLayer toggleAlerts={ this.toggleAlerts } toggleCitybikes={ this.toggleCitybikes } />
-          <MessagePopup />
+          {/* <MessagePopup /> */}
         </MapProvider>
       </section>
     )

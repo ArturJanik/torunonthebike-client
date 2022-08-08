@@ -2,15 +2,21 @@ import 'react-app-polyfill/ie11';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
+import ReactGA from 'react-ga';
+import makeServer from './server';
 
+import App from './App';
+import history from './utilities/history';
 import './fonts.css';
 import './index.css';
 
-import App from './App';
+if (
+  process.env.NODE_ENV === 'development' &&
+  typeof makeServer === 'function'
+) {
+  makeServer();
+}
 
-import history from './utilities/history';
-
-import ReactGA from 'react-ga';
 if(process.env.NODE_ENV === 'production'){
   ReactGA.initialize('UA-140808271-1');
   
