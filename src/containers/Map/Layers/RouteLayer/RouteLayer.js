@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import GeoJSON from './GeoJSON/GeoJSON';
 import { MapContext } from '../../../../context/MapContext';
 
@@ -13,9 +12,11 @@ class RouteLayer extends Component {
       const routesData = localStorage.getItem('routesData');
       if(routesData !== null) {
         const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001/api/bikelanes/last_modification' : 'https://api.onthe.bike/api/bikelanes/last_modification';
-        axios.get(url)
+        fetch(url)
+        .then(res => res.json())
         .then(res => {
-          const lastChange = (res.data.last_changed_at !== null) ? new Date(res.data.last_changed_at) : null;
+          const lastChangedAt = res.last_changed_at;
+          const lastChange = (lastChangedAt !== null) ? new Date(lastChangedAt) : null;
           const lastChangeLocal = (localStorage.getItem('routesLastChange') !== null) ? new Date(localStorage.getItem('routesLastChange')) : null;
 
           if(lastChange > lastChangeLocal){
@@ -39,11 +40,12 @@ class RouteLayer extends Component {
 
   fetchRoutesData = () => {
     const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3001/api/bikelanes' : 'https://api.onthe.bike/api/bikelanes';
-    axios.get(url)
+    fetch(url)
+    .then(res => res.json())
     .then(res => {
-      const routes = res.data[ 0 ];
+      const routes = res[ 0 ];
       if(routes){
-        const { last_changed_at } = res.data[ 1 ];
+        const { last_changed_at } = res[ 1 ];
         const parsedRoutes = this.parseRoutesData(routes);
         localStorage.setItem('routesData', JSON.stringify({ type: 'FeatureCollection', features: parsedRoutes }));
         localStorage.setItem('routesLastChange', last_changed_at);

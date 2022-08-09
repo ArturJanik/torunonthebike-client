@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import axios from 'axios';
 import L from 'leaflet';
 import createPopup from '../EventLayer/RoutePopup/RoutePopup';
 import { MapContext } from '../../../../context/MapContext';
@@ -58,9 +57,10 @@ class CitybikeLayer extends Component {
 
   fetchStationsData = () => {
     this.setState({ stationsLoading: true });
-    return axios.get(urls.getdata)
+    return fetch(urls.getdata)
+    .then(res => res.json())
     .then(res => {
-      const { stations, modificationDate } = res.data;
+      const { stations, modificationDate } = res;
       if(stations.length > 0 && modificationDate !== null){
         localStorage.setItem('stationsData', JSON.stringify(stations));
         localStorage.setItem('stationsLastChange', modificationDate);
@@ -76,9 +76,9 @@ class CitybikeLayer extends Component {
   checkIfDataInSync = () => {
     const lastLocalChange = localStorage.getItem('stationsLastChange');
     
-    return axios.post(urls.uptodate, { lastLocalChange })
-    .then(res => {
-      const upToDate = res.data;
+    return fetch(urls.uptodate, { method: 'POST', body: { lastLocalChange } })
+    .then(res => res.json())
+    .then(upToDate => {
       if(upToDate){
         const localStationsData = localStorage.getItem('stationsData');
         return this.setState({ stationsData: JSON.parse(localStationsData) });

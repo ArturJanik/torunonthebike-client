@@ -1,11 +1,17 @@
 ## Roadmap
 
-* replacing axios with Fetch API
+* --replacing axios with Fetch API--
 * complete rewrite of app to React 18 and Typescript
 * slimming down dependency tree (using pure React instead of create-react-app)
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with native solutions
 
-## 1.5.0
+## 1.6.0 - 09.08.2022
+
+### Changed
+
+* replaced __axios__ with Fetch API
+
+## 1.5.0 - 09.08.2022
 
 ### Added
 
@@ -16,7 +22,7 @@
 * removed redundant elements (Message, Alerts)
 * removed __react-transition-group__
 
-## 1.4.0
+## 1.4.0 - 08.08.2022
 
 ### Added
 
