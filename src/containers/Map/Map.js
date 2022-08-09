@@ -1,25 +1,18 @@
 import React, { Component } from 'react';
 import styles from './Map.module.css';
 
-// import MessagePopup from '../../components/MessagePopup/MessagePopup';
-import MapWrapper from './MapWrapper/MapWrapper'
-import TileLayer from './Layers/TileLayer/TileLayer'
-import RouteLayer from './Layers/RouteLayer/RouteLayer'
-import EventLayer from './Layers/EventLayer/EventLayer'
-import ControlLayer from './Layers/ControlLayer/ControlLayer'
-import AlertLayer from './Layers/AlertLayer/AlertLayer'
-import CitybikeLayer from './Layers/CitybikeLayer/CitybikeLayer'
+import MapWrapper from './MapWrapper/MapWrapper';
+import TileLayer from './Layers/TileLayer/TileLayer';
+import RouteLayer from './Layers/RouteLayer/RouteLayer';
+import EventLayer from './Layers/EventLayer/EventLayer';
+import ControlLayer from './Layers/ControlLayer/ControlLayer';
+import CitybikeLayer from './Layers/CitybikeLayer/CitybikeLayer';
 
 import { MapProvider } from '../../context/MapContext';
 
 class Map extends Component {
   state = {
-    alertsVisible: false,
     citybikesVisible: false
-  }
-
-  toggleAlerts = () => {
-    this.setState(prevState => ({ alertsVisible: !prevState.alertsVisible }));
   }
 
   toggleCitybikes = () => {
@@ -35,11 +28,9 @@ class Map extends Component {
             <TileLayer />
             <RouteLayer />
             <EventLayer />
-            { this.state.alertsVisible && <AlertLayer /> }
             { this.state.citybikesVisible && <CitybikeLayer /> }
           </MapWrapper>
-          <ControlLayer toggleAlerts={ this.toggleAlerts } toggleCitybikes={ this.toggleCitybikes } />
-          {/* <MessagePopup /> */}
+          <ControlLayer toggleCitybikes={ this.toggleCitybikes } />
         </MapProvider>
       </section>
     )

@@ -5,6 +5,17 @@
 * slimming down dependency tree (using pure React instead of create-react-app)
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with native solutions
 
+## 1.5.0
+
+### Added
+
+* completed dummy development api with missing endpoints
+
+### Removed
+
+* removed redundant elements (Message, Alerts)
+* removed __react-transition-group__
+
 ## 1.4.0
 
 ### Added
@@ -16,7 +27,6 @@
 
 * remanaged packages in package.json
 * turned off message popup
-* updated __axios__ `0.19.0` -> `0.19.2`
 * updated __leaflet__ `1.7.0` -> `1.8.0`
 
 ## 1.3.0

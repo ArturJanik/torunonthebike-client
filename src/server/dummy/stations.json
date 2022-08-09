@@ -1,0 +1,416 @@
+[
+    {
+        "id": 1,
+        "name": "Mickiewicza/Tujakowskiego",
+        "lat": "53.012045",
+        "lng": "18.596170",
+        "visible": 1,
+        "created_at": "2019-08-07T21:20:43.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 2,
+        "name": "Bydgoska/Konopnickiej",
+        "lat": "53.010158303138006",
+        "lng": "18.584843873977665",
+        "visible": 1,
+        "created_at": "2019-08-08T07:27:44.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 3,
+        "name": "Bydgoska / Park Miejski",
+        "lat": "53.00982585620075",
+        "lng": "18.57971012592316",
+        "visible": 1,
+        "created_at": "2019-08-08T07:30:22.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 4,
+        "name": "Broniewskiego/Reja",
+        "lat": "53.0133664458665",
+        "lng": "18.571282625198368",
+        "visible": 1,
+        "created_at": "2019-08-08T08:59:01.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 5,
+        "name": "Gagarina/Reja",
+        "lat": "53.017264954240936",
+        "lng": "18.57119143009186",
+        "visible": 1,
+        "created_at": "2019-08-08T08:59:46.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 6,
+        "name": "Gagarina/Od Nowa",
+        "lat": "53.018901061019896",
+        "lng": "18.580144643783573",
+        "visible": 1,
+        "created_at": "2019-08-08T09:00:06.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 7,
+        "name": "Biblioteka UMK",
+        "lat": "53.02033704050138",
+        "lng": "18.570612072944645",
+        "visible": 1,
+        "created_at": "2019-08-08T09:00:32.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 8,
+        "name": "Broniewskiego/Sienkiewicza",
+        "lat": "53.013653682426096",
+        "lng": "18.58046650886536",
+        "visible": 1,
+        "created_at": "2019-08-08T09:01:09.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 9,
+        "name": "Św. Józefa/Św. Klemensa",
+        "lat": "53.022863602973636",
+        "lng": "18.583910465240482",
+        "visible": 1,
+        "created_at": "2019-08-08T09:12:26.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 10,
+        "name": "Szosa Chełmińska/Długa",
+        "lat": "53.030116564214076",
+        "lng": "18.589848875999454",
+        "visible": 1,
+        "created_at": "2019-08-08T09:13:05.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 11,
+        "name": "Długa/Legionów",
+        "lat": "53.03321031669888",
+        "lng": "18.599853515625004",
+        "visible": 1,
+        "created_at": "2019-08-08T09:13:30.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 12,
+        "name": "Zbożowa/Brzoskwiniowa",
+        "lat": "53.04973990344647",
+        "lng": "18.57874989509583",
+        "visible": 1,
+        "created_at": "2019-08-08T09:14:20.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 13,
+        "name": "Ugory/Watzenrodego",
+        "lat": "53.041225941974055",
+        "lng": "18.59822273254395",
+        "visible": 1,
+        "created_at": "2019-08-08T09:14:54.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 14,
+        "name": "Grudziądzka/Kozacka",
+        "lat": "53.031516684072045",
+        "lng": "18.610228300094608",
+        "visible": 1,
+        "created_at": "2019-08-08T09:15:30.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 15,
+        "name": "Legionów/Średnicówka",
+        "lat": "53.025451320719895",
+        "lng": "18.60169887542725",
+        "visible": 1,
+        "created_at": "2019-08-08T09:16:16.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 16,
+        "name": "Szosa Chełmińska/Podgórna",
+        "lat": "53.02163744809532",
+        "lng": "18.596312999725345",
+        "visible": 1,
+        "created_at": "2019-08-08T09:16:45.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 17,
+        "name": "Bema/TorTor",
+        "lat": "53.01888169917224",
+        "lng": "18.592000007629398",
+        "visible": 1,
+        "created_at": "2019-08-08T09:16:57.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 18,
+        "name": "Szosa Chełmińska/Targowisko Miejskie",
+        "lat": "53.01796845548845",
+        "lng": "18.600266575813297",
+        "visible": 1,
+        "created_at": "2019-08-08T09:17:47.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 19,
+        "name": "Plac Rapackiego",
+        "lat": "53.009716115872905",
+        "lng": "18.600389957427982",
+        "visible": 1,
+        "created_at": "2019-08-08T09:18:33.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 20,
+        "name": "Aleja Solidarności/Wały Gen. Sikorskiego",
+        "lat": "53.01327285151837",
+        "lng": "18.603549599647526",
+        "visible": 1,
+        "created_at": "2019-08-08T09:19:12.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 21,
+        "name": "Dąbrowskiego/Dworzec Autobusowy",
+        "lat": "53.01580305487503",
+        "lng": "18.607374429702762",
+        "visible": 1,
+        "created_at": "2019-08-08T09:19:45.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 22,
+        "name": "Plac Św. Katarzyny",
+        "lat": "53.01370209289397",
+        "lng": "18.612980246543888",
+        "visible": 1,
+        "created_at": "2019-08-08T09:20:10.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 23,
+        "name": "Rynek Nowomiejski",
+        "lat": "53.012075471431146",
+        "lng": "18.611086606979374",
+        "visible": 1,
+        "created_at": "2019-08-08T09:20:31.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 24,
+        "name": "PKP Toruń Miasto",
+        "lat": "53.012704826292705",
+        "lng": "18.619219064712528",
+        "visible": 1,
+        "created_at": "2019-08-08T09:21:15.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 25,
+        "name": "Bażyńskich/Grudziądzka",
+        "lat": "53.02124700725297",
+        "lng": "18.613098263740543",
+        "visible": 1,
+        "created_at": "2019-08-08T09:22:04.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 26,
+        "name": "Sobieskiego/Garbaty Mostek",
+        "lat": "53.019533543265226",
+        "lng": "18.62339794635773",
+        "visible": 1,
+        "created_at": "2019-08-08T09:22:29.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 27,
+        "name": "Antczaka/Targowa",
+        "lat": "53.01774578890308",
+        "lng": "18.63566100597382",
+        "visible": 1,
+        "created_at": "2019-08-08T09:22:54.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 28,
+        "name": "Kościuszki/Świętopełka",
+        "lat": "53.02383804857559",
+        "lng": "18.617896735668186",
+        "visible": 1,
+        "created_at": "2019-08-08T09:23:34.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 29,
+        "name": "PKP Toruń Wschodni",
+        "lat": "53.02607080119078",
+        "lng": "18.633853197097782",
+        "visible": 1,
+        "created_at": "2019-08-08T09:24:06.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 30,
+        "name": "Rydygiera/Szosa Lubicka",
+        "lat": "53.02351538690653",
+        "lng": "18.65907669067383",
+        "visible": 1,
+        "created_at": "2019-08-08T09:24:34.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 31,
+        "name": "Rydygiera/Stokrotka",
+        "lat": "53.02953262982798",
+        "lng": "18.653240203857425",
+        "visible": 1,
+        "created_at": "2019-08-08T09:26:28.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 32,
+        "name": "Dziewulskiego/Manhattan",
+        "lat": "53.027419431031525",
+        "lng": "18.66587340831757",
+        "visible": 1,
+        "created_at": "2019-08-08T09:27:33.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 33,
+        "name": "Szosa Lubicka/Pętla Rubinkowo",
+        "lat": "53.027148417893926",
+        "lng": "18.679949641227726",
+        "visible": 1,
+        "created_at": "2019-08-08T09:28:11.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 34,
+        "name": "Kolankowskiego/Kosynierów",
+        "lat": "53.028648647813604",
+        "lng": "18.692464828491214",
+        "visible": 1,
+        "created_at": "2019-08-08T09:28:50.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 35,
+        "name": "Konstytucji 3 Maja/Ślaskiego",
+        "lat": "53.02379932930274",
+        "lng": "18.675797581672672",
+        "visible": 1,
+        "created_at": "2019-08-08T09:29:32.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 36,
+        "name": "PKP Toruń Główny",
+        "lat": "53.00056795581448",
+        "lng": "18.61389756202698",
+        "visible": 1,
+        "created_at": "2019-08-08T09:30:16.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 37,
+        "name": "Poznańska/Środkowa",
+        "lat": "52.99382987430149",
+        "lng": "18.59406799077988",
+        "visible": 1,
+        "created_at": "2019-08-08T09:31:13.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 38,
+        "name": "Iwanowskiej/Prufferów",
+        "lat": "52.99255123128556",
+        "lng": "18.600824475288395",
+        "visible": 1,
+        "created_at": "2019-08-08T09:31:52.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 39,
+        "name": "Hallera/SP14",
+        "lat": "52.99553790148792",
+        "lng": "18.616842627525333",
+        "visible": 1,
+        "created_at": "2019-08-08T09:32:35.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 40,
+        "name": "Łódzka/Okólna",
+        "lat": "52.99367488928554",
+        "lng": "18.629261255264286",
+        "visible": 1,
+        "created_at": "2019-08-08T09:33:04.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 41,
+        "name": "Toruń Plaza",
+        "lat": "53.014331424034026",
+        "lng": "18.561143875122074",
+        "visible": 1,
+        "created_at": "2019-11-17T11:15:48.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 42,
+        "name": "C.H. Kometa",
+        "lat": "53.03477485154454",
+        "lng": "18.612813949584964",
+        "visible": 1,
+        "created_at": "2019-11-17T11:17:06.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 43,
+        "name": "Atrium Copernicus",
+        "lat": "53.02443173974091",
+        "lng": "18.63811254501343",
+        "visible": 1,
+        "created_at": "2019-11-17T11:18:01.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 44,
+        "name": "Neuca/Forteczna",
+        "lat": "53.05568577902483",
+        "lng": "18.617320060729984",
+        "visible": 1,
+        "created_at": "2020-05-02T15:28:04.000Z",
+        "updated_at": "2021-03-20T11:36:51.000Z"
+    },
+    {
+        "id": 45,
+        "name": "Kwiatowa",
+        "lat": "53.042278990839606",
+        "lng": "18.580536246299747",
+        "visible": 1,
+        "created_at": "2021-03-21T11:56:30.000Z",
+        "updated_at": null
+    },
+    {
+        "id": 46,
+        "name": "Starotoruńska",
+        "lat": "53.018976894839525",
+        "lng": "18.517863750457767",
+        "visible": 1,
+        "created_at": "2021-03-21T11:59:05.000Z",
+        "updated_at": null
+    }
+]
