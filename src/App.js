@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 
 import Layout from './hoc/Layout/Layout';
-import Map from './containers/Map/Map';
+import { Map } from './containers/Map/Map';
 import Document from './containers/Document/Document';
 
 const routes = (

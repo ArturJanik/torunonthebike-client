@@ -1,9 +1,16 @@
 ## Roadmap
 
-* --replacing axios with Fetch API--
+* ~~replacing axios with Fetch API~~
 * complete rewrite of app to React 18 and Typescript
 * slimming down dependency tree (using pure React instead of create-react-app)
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with native solutions
+
+## 1.7.0 - 11.08.2022
+
+### Changed
+
+* App, Map and Document components switched from class to function components with hooks
+* updated About page content
 
 ## 1.6.0 - 09.08.2022
 

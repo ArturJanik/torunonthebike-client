@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Map.module.css';
 
 import MapWrapper from './MapWrapper/MapWrapper';
@@ -10,31 +10,28 @@ import CitybikeLayer from './Layers/CitybikeLayer/CitybikeLayer';
 
 import { MapProvider } from '../../context/MapContext';
 
-class Map extends Component {
-  state = {
-    citybikesVisible: false
-  }
+export const Map = () => {
+  const [ showCitybikes, setShowCitybikes ] = useState(false);
 
-  toggleCitybikes = () => {
-    this.setState(prevState => ({ citybikesVisible: !prevState.citybikesVisible }));
-  }
-
-  render(){
+  useEffect(() => {
     document.title = 'Interaktywna mapa rowerowa Torunia - Toruń.onthe.bike';
-    return(
-      <section className={ styles.mapSection }>
-        <MapProvider>
-          <MapWrapper className={ styles.mapWrapper }>
-            <TileLayer />
-            <RouteLayer />
-            <EventLayer />
-            { this.state.citybikesVisible && <CitybikeLayer /> }
-          </MapWrapper>
-          <ControlLayer toggleCitybikes={ this.toggleCitybikes } />
-        </MapProvider>
-      </section>
-    )
-  }
-}
+  }, []);
 
-export default Map;
+  const toggleCitybikes = () => {
+    setShowCitybikes(!showCitybikes);
+  };
+
+  return (
+    <section className={ styles.mapSection }>
+      <MapProvider>
+        <MapWrapper className={ styles.mapWrapper }>
+          <TileLayer />
+          <RouteLayer />
+          <EventLayer />
+          { showCitybikes && <CitybikeLayer /> }
+        </MapWrapper>
+        <ControlLayer toggleCitybikes={ toggleCitybikes } />
+      </MapProvider>
+    </section>
+  );
+};

@@ -27,17 +27,23 @@ const content = (
     </ul>
     <hr />
     <h2>FAQ</h2>
-    <h3>Jak mogę pomóc w tworzeniu mapy?</h3>
+    <h3>Jak mogę pomóc w tworzeniu mapy? (Aktualizacja 11.08.2022)</h3>
     <p>
-      Możesz zgłosić uwagi za pomocą anonimowego formularza kontaktowego. Będę wdzięczny za wszelkie informacje na temat braków i nieścisłości w mojej mapie, robót drogowych obejmujących DDR itp. Nie mam żadnych związków z władzami miasta i robię mapę pro publico bono więc jakieś wpadki mogą się zawsze zdarzyć.
+      Niestety, w związku z chronicznym brakiem czasu jestem zmuszony wyłączyć formularz kontaktowy. Jednocześnie dziękuję osobom, które zgłaszały zarówno problemy techniczne z działaniem strony, jak i pomysły na rozwój. 
+    </p>
+    <h3>Dlaczego nie oznaczasz też ulic z kontraruchem?</h3>
+    <p>
+      Zajmuję się mapą jednoosobowo i nie byłbym w stanie zebrać i przetworzyć wszystkich informacji o drogach z kontraruchem w Toruniu. Zdaję sobie sprawę z tego, że jest ich sporo w obrębie Bydgoskiego Przedmieścia i Starówki, ale nie przewiduję &#34;inwentaryzacji&#34; i wzbogacenia o nie mapy. Wolę ograniczyć się do tego co jestem w stanie raz-dwa razy do roku aktualizować. 
     </p>
     <h3>Czy po wszystkich zaznaczonych drogach można legalnie poruszać się rowerem?</h3>
     <p>
-      Nie jestem prawnikiem ani policjantem i nie mam pewności - dlatego chciałbym zaznaczyć, że nie odpowiadam za ewentualne mandaty, chociaż będę bardzo wdzięczny za informacje jeśli na którejś z oznaczonych na mapie dróg są wręczane ;)<br/>W wielu miejscach istnieje problem z niespójnością oznakowania poziomego i pionowego, a także z określeniem gdzie się zaczyna i kończy dozwolony ruch rowerem. Tworząc mapę starałem się mimo wszystko wierzyć w logiczną spójność infrastruktury i dlatego uznaję, że np. na całej długości Lubickiej możemy jechać rowerem, choć na podstawie oznakowania jest to trudne do ustalenia.
+      Nie jestem prawnikiem ani policjantem i nie mam pewności - dlatego chciałbym zaznaczyć, że nie odpowiadam za ewentualne mandaty, ale starałem się zadbać o to by trzymać się miejsc z oznaczeniem konkretnie wskazującym na możliwość poruszania się rowerem.<br/>W wielu miejscach istnieje problem z niespójnością oznakowania poziomego i pionowego, a także z określeniem gdzie się zaczyna i kończy dozwolony ruch rowerem. Tworząc mapę starałem się mimo wszystko wierzyć w logiczną spójność infrastruktury i dlatego uznaję, że np. na całej długości Lubickiej możemy jechać rowerem, choć na podstawie oznakowania jest to trudne do ustalenia.
     </p>
     <h3>Po co kolejna mapa? Przecież na GoogleMaps/OpenStreetMap/OpenCycleMaps są już DDR w Toruniu</h3>
     <p>
-      W przypadku wszystkich powyższych źródeł spotkałem się z wieloma nieaktualnymi i brakującymi informacjami. Jeśli wierzyć Google Maps mamy 3 pasy dla rowerów na Al. Solidarności ;) Dodatkowo, chciałem uniknąć mieszania infrastruktury rowerowej z tzw. &quot;drogami przyjaznymi dla rowerzystów&quot; czyli jezdniami z kontraruchem rowerowym, które choć przydatne, nie stanowią w mojej opinii infrastruktury rowerowej.
+      <s>W przypadku wszystkich powyższych źródeł spotkałem się z wieloma nieaktualnymi i brakującymi informacjami. Jeśli wierzyć Google Maps mamy 3 pasy dla rowerów na Al. Solidarności ;) Dodatkowo, chciałem uniknąć mieszania infrastruktury rowerowej z tzw. &quot;drogami przyjaznymi dla rowerzystów&quot; czyli jezdniami z kontraruchem rowerowym, które choć przydatne, nie stanowią w mojej opinii infrastruktury rowerowej.</s><br/><br/>
+      <strong>Aktualizacja 11.08.2022</strong><br/><br/>
+      Na dzień dzisiejszy mapy w OpenStreetMap/OpenCycleMap są już znacznie precyzyjniejsze i to raczej ja muszę za nimi nadganiać (choć jeszcze nie ma na nich np. drogi łączącej Batorego z Wielkim Rowem). W przypadku warstwy rowerowej Google Maps niestety mamy do czynienia raczej z pogorszeniem jakości informacji (wystarczy spojrzeć na oznaczenie przez Google prawie każdej ulicy w mieście jako &quot;przyjazna rowerzystom&quot; - co to oznacza, chyba nie wie nikt poza Google).
     </p>
     <h3>Na jakiej podstawie oceniasz jakość nawierzchni?</h3>
     <p>
