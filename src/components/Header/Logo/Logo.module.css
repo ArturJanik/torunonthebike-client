@@ -4,8 +4,8 @@
 }
 .image {
   composes: display--block from '../../../mixins/display.module.css';
-  composes: width--fluid from '../../../mixins/width.module.css';
   height: auto;
+  width: 100%;
 }
 
 @media all and (max-width: 640px){

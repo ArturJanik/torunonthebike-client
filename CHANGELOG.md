@@ -1,9 +1,24 @@
 ## Roadmap
 
 * ~~replacing axios with Fetch API~~
-* complete rewrite of app to React 18 and Typescript
+* ~~complete rewrite of app to React 18 and Typescript~~
 * slimming down dependency tree (using pure React instead of create-react-app)
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with native solutions
+
+## 2.0.0 - 19.08.2022
+
+### Changed
+
+* completely dropped create-react-app boilerplate code/settings
+* migrated to typescript and css modules
+* migrated from class components to functional with hooks
+* minor refactors/cleanups
+
+* updated __react__ `16.14.0` -> `18.2.0`
+* updated __react-app-polyfill__ `1.0.6` -> `3.0.0`
+* updated __react-dom__ `16.14.0` -> `18.2.0`
+* updated __react-ga__ `2.7.0` -> `3.3.1`
+* updated __react-router-dom__ `5.2.0` -> `6.3.0`
 
 ## 1.7.0 - 11.08.2022
 

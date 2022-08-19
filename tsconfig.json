@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "jsx": "react-jsx",
+        "module": "ES2015",
+        "noImplicitAny": true,
+        "strict": true,
+        "removeComments": true,
+        "strictNullChecks": true,
+        "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    },
+    "include": ["src/**/*", "src/typings.d.ts"],
+    "exclude": ["node_modules", "**/*.spec.ts", "dist/**/*", "public/**/*", "src/index.js"]
+}
