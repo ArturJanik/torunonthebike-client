@@ -6,9 +6,9 @@ import ReactGA from 'react-ga';
 import makeServer from './server';
 
 import App from './App';
+import { isDev, isProd } from './utilities/isEnv';
 import './fonts.css';
 import './index.css';
-import { isDev, isProd } from './utilities/isDev';
 
 if (isDev() && typeof makeServer === 'function') {
   makeServer();

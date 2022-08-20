@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from 'react';
 import * as L from 'leaflet';
-import createPopup, { createStationPopup } from '../EventLayer/RoutePopup/RoutePopup';
+import { createStationPopup } from '../EventLayer/RoutePopup/RoutePopup';
 import { MapContext } from '../../../../context/MapContext';
 import styles from './CitybikeLayer.module.css';
-import { isDev } from '../../../../utilities/isDev';
+import { isDev } from '../../../../utilities/isEnv';
 
 const urls = {
   uptodate: (isDev()) ? 'http://localhost:3001/api/stations/verify_last_modification' : 'https://api.onthe.bike/api/stations/verify_last_modification',

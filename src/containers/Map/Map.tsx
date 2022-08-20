@@ -9,12 +9,13 @@ import { ControlLayer } from './Layers/ControlLayer/ControlLayer';
 import CitybikeLayer from './Layers/CitybikeLayer/CitybikeLayer';
 
 import { MapContextProvider } from '../../context/MapContext';
+import { setTitle } from '../../utilities/setSeoTitle';
 
 export const Map = (): JSX.Element => {
   const [ showCitybikes, setShowCitybikes ] = useState(false);
 
   useEffect(() => {
-    document.title = 'Interaktywna mapa rowerowa Torunia - Toruń.onthe.bike';
+    setTitle('Interaktywna mapa rowerowa Torunia');
   }, []);
 
   const toggleCitybikes = (): void => {

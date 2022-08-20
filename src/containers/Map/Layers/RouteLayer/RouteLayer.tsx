@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import GeoJSON from './GeoJSON/GeoJSON';
 import { MapContext } from '../../../../context/MapContext';
-import { isDev } from '../../../../utilities/isDev';
+import { isDev } from '../../../../utilities/isEnv';
 
 interface BikeLane {
   id: number;

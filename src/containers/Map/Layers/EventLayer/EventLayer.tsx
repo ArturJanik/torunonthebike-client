@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { MapContext } from '../../../../context/MapContext';
-import createPopup from './RoutePopup/RoutePopup';
+import createRoutePopup from './RoutePopup/RoutePopup';
 import circle from './Circle/Circle';
 
 import './EventLayer.css';
@@ -41,7 +41,7 @@ export const EventLayer = (): JSX.Element => {
     map.on('almost:click', function (e) {
       if (e.layer.options.opacity !== 0){
         e.layer.unbindPopup();
-        const popup = createPopup('bikelane', e.layer.feature.properties);
+        const popup = createRoutePopup('bikelane', e.layer.feature.properties);
         e.layer.bindPopup(popup, {
           className: 'popup',
           minWidth: 200,

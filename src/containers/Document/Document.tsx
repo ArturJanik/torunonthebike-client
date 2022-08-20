@@ -1,23 +1,7 @@
 import { useEffect } from 'react';
 import styles from './Document.module.css';
-import privacy from './content/privacy.content';
-import about from './content/about.content';
-
-const pages: {
-  [key: string]: {
-    title: string;
-    content: JSX.Element;
-  };
-} = {
-  'privacy': {
-    title: 'Polityka prywatności i cookies',
-    content: privacy,
-  },
-  'about': {
-    title: 'O projekcie',
-    content: about,
-  },
-};
+import { pages } from './content/content';
+import { setTitle } from '../../utilities/setSeoTitle';
 
 interface DocumentProps {
   show: 'privacy' | 'about';
@@ -28,7 +12,7 @@ export const Document = ({ show }: DocumentProps): JSX.Element => {
   const content = pages[show].content;
 
   useEffect(() => {
-    document.title = `${ title } - Toruń.onthe.bike`;
+    setTitle(title);
   }, [show]);
 
   return (

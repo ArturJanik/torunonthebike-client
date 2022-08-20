@@ -5,6 +5,11 @@
 * slimming down dependency tree (using pure React instead of create-react-app)
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with native solutions
 
+## 2.1.0 - 20.08.2022
+
+* refactor document component
+* minor naming changes
+
 ## 2.0.0 - 19.08.2022
 
 ### Changed
