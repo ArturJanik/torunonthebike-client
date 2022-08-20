@@ -2,8 +2,15 @@
 
 * ~~replacing axios with Fetch API~~
 * ~~complete rewrite of app to React 18 and Typescript~~
-* slimming down dependency tree (using pure React instead of create-react-app)
+* ~~slimming down dependency tree (using pure React instead of create-react-app)~~
+* getting rid of mixins
+* refactoring map context
+* refactoring layers
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with native solutions
+
+## 2.2.0 - 21.08.2022
+
+* add aliases
 
 ## 2.1.0 - 20.08.2022
 

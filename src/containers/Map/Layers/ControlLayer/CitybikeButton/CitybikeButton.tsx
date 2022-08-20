@@ -1,5 +1,5 @@
 import styles from './CitybikeButton.module.css';
-import btnBgSrc from '../../../../../assets/trm.png';
+import btnBgSrc from 'assets/trm.png';
 
 interface CitybikeButton {
   onClick: () => void;

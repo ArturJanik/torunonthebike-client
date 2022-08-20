@@ -3,9 +3,9 @@ import * as L from 'leaflet';
 import 'leaflet-geometryutil';
 import 'leaflet-almostover';
 import 'leaflet/dist/leaflet.css';
+import { MapContext } from 'context/MapContext';
 import styles from './MapWrapper.module.css';
 
-import { MapContext } from '../../../context/MapContext';
 
 interface MapWrapperProps {
   children: JSX.Element[] | JSX.Element;

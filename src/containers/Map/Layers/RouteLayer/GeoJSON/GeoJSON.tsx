@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import * as L from 'leaflet';
-import { MapContext } from '../../../../../context/MapContext';
+import { MapContext } from 'context/MapContext';
 import { RouteOptions, Routes } from '../RouteLayer';
 
 interface GeoJSONProps {

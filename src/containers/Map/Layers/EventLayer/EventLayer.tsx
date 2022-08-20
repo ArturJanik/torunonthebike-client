@@ -1,8 +1,7 @@
 import { useContext, useEffect } from 'react';
-import { MapContext } from '../../../../context/MapContext';
+import { MapContext } from 'context/MapContext';
 import createRoutePopup from './RoutePopup/RoutePopup';
 import circle from './Circle/Circle';
-
 import './EventLayer.css';
 
 export const EventLayer = (): JSX.Element => {

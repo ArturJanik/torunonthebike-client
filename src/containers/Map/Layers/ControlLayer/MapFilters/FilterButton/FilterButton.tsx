@@ -1,5 +1,5 @@
 import styles from './FilterButton.module.css';
-import btnBgSrc from '../../../../../../assets/typebtn.png';
+import btnBgSrc from 'assets/typebtn.png';
 
 interface FilterButtonProps {
     onClick: () => void;

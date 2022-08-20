@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
 import * as L from 'leaflet';
-import { MapContext } from '../../../../context/MapContext';
+import { MapContext } from 'context/MapContext';
 
 export const TileLayer = (): JSX.Element => {
   const mapCtx = useContext(MapContext);

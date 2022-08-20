@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import styles from './Document.module.css';
 import { pages } from './content/content';
-import { setTitle } from '../../utilities/setSeoTitle';
+import { setTitle } from 'utilities/setSeoTitle';
+import styles from './Document.module.css';
 
 interface DocumentProps {
   show: 'privacy' | 'about';

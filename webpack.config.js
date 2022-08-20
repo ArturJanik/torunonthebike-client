@@ -1,6 +1,7 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = (env) => ({
   mode: env.WEBPACK_SERVE ? 'development' : 'production', 
@@ -23,6 +24,9 @@ module.exports = (env) => ({
   },
   resolve: {
     extensions: ['.js','.jsx','.ts','.tsx'],
+    plugins: [
+      new TsconfigPathsPlugin(),
+    ],
   },
   module: {
     rules: [

@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
-import styles from './MapFilters.module.css';
-import { FilterType, MapContext } from '../../../../../context/MapContext';
+import { FilterType, MapContext } from 'context/MapContext';
 import { FilterOption } from './FilterOption/FilterOption';
 import { FilterButton } from './FilterButton/FilterButton';
+import styles from './MapFilters.module.css';
 
 interface FilterTypeDescription {
   value: FilterType;

@@ -1,4 +1,4 @@
-import { FilterType, OptionValue } from '../../../../../../context/MapContext';
+import { FilterType, OptionValue } from 'context/MapContext';
 import styles from './FilterOption.module.css';
 
 interface FilterOptionProps {

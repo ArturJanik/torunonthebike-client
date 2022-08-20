@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { MapContext } from '../../../../../context/MapContext';
+import { MapContext } from 'context/MapContext';
 import styles from './ZoomControl.module.css';
 
 const ZoomControl = (): JSX.Element => {

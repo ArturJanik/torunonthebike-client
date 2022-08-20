@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import styles from './Map.module.css';
 
 import { MapWrapper } from './MapWrapper/MapWrapper';
 import { TileLayer } from './Layers/TileLayer/TileLayer';
@@ -8,8 +7,10 @@ import EventLayer from './Layers/EventLayer/EventLayer';
 import { ControlLayer } from './Layers/ControlLayer/ControlLayer';
 import CitybikeLayer from './Layers/CitybikeLayer/CitybikeLayer';
 
-import { MapContextProvider } from '../../context/MapContext';
-import { setTitle } from '../../utilities/setSeoTitle';
+import { MapContextProvider } from 'context/MapContext';
+import { setTitle } from 'utilities/setSeoTitle';
+
+import styles from './Map.module.css';
 
 export const Map = (): JSX.Element => {
   const [ showCitybikes, setShowCitybikes ] = useState(false);

@@ -1,6 +1,6 @@
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-import CookiePrompt from '../../components/CookiePrompt/CookiePrompt';
+import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
+import CookiePrompt from 'components/CookiePrompt/CookiePrompt';
 
 interface LayoutProps {
   children: JSX.Element[] | JSX.Element;
