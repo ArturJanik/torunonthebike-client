@@ -1,35 +1,30 @@
 import 'react-app-polyfill/ie11';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import makeServer from './server';
 
 import App from './App';
-import history from './utilities/history';
 import './fonts.css';
 import './index.css';
+import { isDev, isProd } from './utilities/isDev';
 
-if (
-  process.env.NODE_ENV === 'development' &&
-  typeof makeServer === 'function'
-) {
+if (isDev() && typeof makeServer === 'function') {
   makeServer();
 }
 
-if(process.env.NODE_ENV === 'production'){
+if(isProd()){
   ReactGA.initialize('UA-140808271-1');
-  
-  history.listen((location, action) => {
-    ReactGA.set({ page: location.pathname });
-    ReactGA.pageview(location.pathname);
-  });
+  ReactGA.pageview(window.location.pathname + window.location.search);
 }
 
 const app = (
-  <Router history={ history }>
+  <BrowserRouter history={ history }>
     <App />
-  </Router>
+  </BrowserRouter>
 );
 
-ReactDOM.render(app, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(app);

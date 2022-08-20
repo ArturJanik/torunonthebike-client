@@ -1,8 +1,8 @@
 .document {
-  composes: width--fluid from '../../mixins/width.module.css';
   max-width: 960px;
   margin: 100px auto;
   padding: 10px 10px 100px;
+  width: 100%;
 }
 .title {
   composes: font-weight--800 from '../../mixins/typography.module.css';
