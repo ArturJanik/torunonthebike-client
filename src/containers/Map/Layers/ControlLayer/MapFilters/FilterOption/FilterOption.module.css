@@ -1,16 +1,16 @@
 .filterOption {
-  composes: bg-color--gray from '../../../../../../mixins/color.module.css';
-  composes: display--flex from '../../../../../../mixins/display.module.css';
-  composes: cursor--pointer from '../../../../../../mixins/misc.module.css';
   align-items: flex-start;
+  background-color: #eee;
+  cursor: pointer;
+  display: flex;
   border-bottom: 2px solid #ddd;
   font-size: 1.4rem;
   padding: 5px 10px;
 }
 .filterOptionBox {
-  composes: bg-color--white from '../../../../../../mixins/color.module.css';
-  composes: display--inline-block from '../../../../../../mixins/display.module.css';
+  background-color: #fff;
   border: 2px solid#ccc;
+  display: inline-block;
   height: 20px;
   flex: 0 0 20px;
   margin-right: 10px;

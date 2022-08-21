@@ -24,5 +24,3 @@ export const Document = ({ show }: DocumentProps): JSX.Element => {
     </section>
   );
 };
-
-export default Document;

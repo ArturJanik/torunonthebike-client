@@ -1,16 +1,16 @@
 .filter {
-  composes: bg-color--white from '../../../../../mixins/color.module.css';
-  composes: position--fixed from '../../../../../mixins/position.module.css';
+  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0px 3px 1px 0px rgba(0,0,0,.3);
   padding: 10px 15px;
+  position: fixed;
   right: 10px;
   top: 10px;
   width: 240px;
   z-index: 10;
 }
 .filterTitle {
-  composes: font-weight--800 from '../../../../../mixins/typography.module.css';
+  font-weight: 800;
   border-bottom: 2px solid #ddd;
   padding: 5px 0;
   text-transform: uppercase;
@@ -19,18 +19,18 @@
   padding: 10px 0;
 }
 .filterType {
-  composes: bg-color--gray from '../../../../../mixins/color.module.css';
-  composes: cursor--pointer from '../../../../../mixins/misc.module.css';
-  composes: font-weight--600 from '../../../../../mixins/typography.module.css';
+  background-color: #eee;
+  cursor: pointer;
+  font-weight: 600;
   border-bottom: 2px solid #ddd;
   font-size: 1.4rem;
   padding: 5px 10px;
   transition: padding .2s ease;
 }
 .selected {
-  composes: color--white from '../../../../../mixins/color.module.css';
-  composes: bg-color--main from '../../../../../mixins/color.module.css';
+  background-color: #2788ba;
   border-bottom: 2px solid #006699;
+  color: #fff;
 }
 .filterType:not(.selected):hover {
   background: #fff;

@@ -1,10 +1,10 @@
 .mapSection {
-  composes: bg-color--white from '../../mixins/color.module.css';
-  composes: position--fixed from '../../mixins/position.module.css';
+  background-color: #fff;
   bottom: 0;
   height: 100%;
   left: 0;
   padding-bottom: 45px;
+  position: fixed;
   right: 0;
   top: 0;
   width: 100%;

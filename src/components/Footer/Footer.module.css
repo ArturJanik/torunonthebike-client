@@ -1,13 +1,13 @@
 .footer {
-  composes: bg-color--white from '../../mixins/color.module.css';
-  composes: display--flex from '../../mixins/display.module.css';
-  composes: position--fixed from '../../mixins/position.module.css';
+  background-color: #fff;
+  display: flex;
   border-top: 1px solid #ddd;
   bottom: 0;
   height: 45px;
   justify-content: space-between;
   left: 0;
   padding: 10px;
+  position: fixed;
   width: 100%;
   z-index: 10;
 }

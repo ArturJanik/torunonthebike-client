@@ -3,9 +3,9 @@ import {
   Routes
 } from 'react-router-dom';
 
-import Layout from './hoc/Layout/Layout';
+import { Layout } from './wrappers/Layout/Layout';
 import { Map } from './containers/Map/Map';
-import Document from './containers/Document/Document';
+import { Document } from './containers/Document/Document';
 
 const routes: JSX.Element = (
   <Routes>

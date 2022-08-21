@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { MapContext } from 'context/MapContext';
+import { Button } from 'components/UI/Button/Button';
 import styles from './ZoomControl.module.css';
 
 const ZoomControl = (): JSX.Element => {
@@ -20,8 +21,12 @@ const ZoomControl = (): JSX.Element => {
 
   return (
     <div className={ styles.buttons }>
-      <div className={ styles.zoomIn } onClick={ zoomIn }><span>+</span></div>
-      <div className={ styles.button } onClick={ zoomOut }><span>-</span></div>
+      <Button onClick={ zoomIn } className={styles.zoomInBtn}>
+        <span>+</span>
+      </Button>
+      <Button onClick={ zoomOut } className={styles.zoomOutBtn}>
+        <span>-</span>
+      </Button>
     </div>
   )
 }

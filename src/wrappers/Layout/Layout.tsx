@@ -6,7 +6,7 @@ interface LayoutProps {
   children: JSX.Element[] | JSX.Element;
 }
 
-const Layout = ({ children }: LayoutProps): JSX.Element => {
+export const Layout = ({ children }: LayoutProps): JSX.Element => {
   return (
     <>
       <Header/>
@@ -16,5 +16,3 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
     </>
   );
 };
-
-export default Layout;

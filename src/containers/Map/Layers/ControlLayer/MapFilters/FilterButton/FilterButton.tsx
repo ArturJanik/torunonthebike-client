@@ -1,3 +1,4 @@
+import { Button } from 'components/UI/Button/Button';
 import styles from './FilterButton.module.css';
 import btnBgSrc from 'assets/typebtn.png';
 
@@ -7,8 +8,8 @@ interface FilterButtonProps {
 
 export const FilterButton = ({ onClick }: FilterButtonProps): JSX.Element => {
     return (
-        <div className={ styles.button } onClick={ onClick }>
-            <img src={ btnBgSrc } className={ styles.image } alt="Pokaż filtry" />
-        </div>
+        <Button onClick={onClick} className={styles.button}>
+          <img className={styles.image} src={btnBgSrc} alt="Pokaż filtry" />
+        </Button>
     );
 };

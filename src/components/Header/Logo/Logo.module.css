@@ -1,9 +1,9 @@
 .logo {
-  composes: display--block from '../../../mixins/display.module.css';
+  display: block;
   max-width: 160px;
 }
 .image {
-  composes: display--block from '../../../mixins/display.module.css';
+  display: block;
   height: auto;
   width: 100%;
 }

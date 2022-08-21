@@ -2,16 +2,20 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-module.exports = (env) => ({
-  mode: env.WEBPACK_SERVE ? 'development' : 'production', 
+const isDevelopment = () => process.env.NODE_ENV === 'development';
+const isProduction = () => process.env.NODE_ENV === 'production';
+
+module.exports = {
+  mode: isDevelopment() ? 'development' : 'production',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'static/js/[name].[contenthash:8].js',
     publicPath: '/',
     assetModuleFilename: 'static/images/[hash][ext][query]',
-//     chunkFilename: 'static/js/[name].[contenthash:8].chunk.js',
+    chunkFilename: 'static/js/[name].[chunkhash].chunk.js',
   },
   target: 'web',
   devServer: {
@@ -21,6 +25,11 @@ module.exports = (env) => ({
     hot: true,
     liveReload: true,
     historyApiFallback: true,
+  },
+  performance: {
+      hints: false,
+      maxEntrypointSize: isDevelopment() ? 512000 : 10000,
+      maxAssetSize: isDevelopment() ? 512000 : 10000,
   },
   resolve: {
     extensions: ['.js','.jsx','.ts','.tsx'],
@@ -65,7 +74,10 @@ module.exports = (env) => ({
             loader: 'css-loader',
             options: {
               importLoaders: 2,
-              modules: true,
+              modules: {
+                  mode: 'local',
+                  localIdentName: isDevelopment() ? '[path][name]__[local]' : '[hash:base64:5]',
+              },
               sourceMap: false,
             },
           },
@@ -78,11 +90,18 @@ module.exports = (env) => ({
     ],
   },
   plugins: [
+    new BundleAnalyzerPlugin({
+        analyzerMode: 'disabled',
+        generateStatsFile: true,
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
 //       inject: true,
 //       minify: 'auto',
     }),
-    !env.WEBPACK_SERVE ? new CleanWebpackPlugin() : false,
+    isProduction() ? new CleanWebpackPlugin() : false,
   ].filter(Boolean),
-});
+  optimization: {
+      splitChunks: { chunks: "all" }
+  },
+};

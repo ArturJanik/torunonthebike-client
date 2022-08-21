@@ -1,5 +1,4 @@
 .button {
-  composes: button--round from '../../../../../mixins/button.module.css';
   background: #368636;
   box-shadow: 0px 3px 2px 0px #1d502c;
   right: 20px;
@@ -13,5 +12,8 @@
 }
 
 .image {
-  composes: button-image from '../../../../../mixins/button.module.css';
+  display: block;
+  height: 40px;
+  margin-top: -5px;
+  width: 40px;
 }

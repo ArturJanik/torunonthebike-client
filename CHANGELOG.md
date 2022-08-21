@@ -8,11 +8,26 @@
 * refactoring layers
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with native solutions
 
+## 2.3.0 - 21.08.2022
+
+### Added
+
+* UI button component
+* bundle analyzer
+
+### Changed
+
+* removed mixins
+
 ## 2.2.0 - 21.08.2022
+
+### Added
 
 * add aliases
 
 ## 2.1.0 - 20.08.2022
+
+### Changed
 
 * refactor document component
 * minor naming changes

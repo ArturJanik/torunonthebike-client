@@ -1,23 +1,27 @@
 .street {
-  composes: bg-color--gray from '../../../../../mixins/color.module.css';
-  composes: font-weight--600 from '../../../../../mixins/typography.module.css';
+  background-color: #eee;
+  font-weight: 600;
   border-bottom: 2px solid #ddd;
   padding: 5px;
 }
+
 .fromTo {
   border-bottom: 1px solid #eee;
   font-size: 1.1rem;
   padding-bottom: 5px;
 }
+
 .fromTo span {
   color: #666;
 }
+
 .surface span,
 .quality span,
 .type span {
   padding-left: 5px;
 }
+
 .text {
-  composes: font-family from '../../../../../mixins/typography.module.css';
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
   text-align: center;
 }

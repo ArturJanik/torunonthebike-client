@@ -1,16 +1,19 @@
 .menu {
-  composes: display--flex from '../../../mixins/display.module.css';
+  display: flex;
   align-items: center;
 }
+
 .menuItem {
-  composes: display--inline-block from '../../../mixins/display.module.css';
+  display: inline-block;
   font-size: 1.4rem;
   padding: 0 10px;
   transition: color .2s ease;
 }
+
 .menuItem:not(:last-child){
   border-right: 1px solid #ccc;
 }
+
 .menuItem:hover {
   color: #209fd9;
   text-decoration: underline;

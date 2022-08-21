@@ -1,13 +1,13 @@
 .wrapper {
-  composes: bg-color--white from '../../mixins/color.module.css';
-  composes: display--flex from '../../mixins/display.module.css';
-  composes: position--fixed from '../../mixins/position.module.css';
+  display: flex;
   align-items: flex-start;
+  background-color: #fff;
   bottom: 0;
   justify-content: space-between;
   left: 0;
   line-height: 1em;
   padding: 20px;
+  position: fixed;
   right: 0;
   z-index: 999;
 }
@@ -24,15 +24,15 @@
 }
 
 .button {
-  composes: bg-color--main from '../../mixins/color.module.css';
-  composes: color--white from '../../mixins/color.module.css';
-  composes: position--relative from '../../mixins/position.module.css';
-  composes: cursor--pointer from '../../mixins/misc.module.css';
-  composes: font-weight--600 from '../../mixins/typography.module.css';
+  background-color: #2788ba;
   border-radius: 2px;
   box-shadow: 0px 3px 2px 0px #006699;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
   overflow: hidden;
   padding: 10px;
+  position: relative;
   text-align: center;
   transition: box-shadow .2s ease;
   z-index: 10;
