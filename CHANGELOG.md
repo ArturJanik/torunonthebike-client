@@ -3,10 +3,20 @@
 * ~~replacing axios with Fetch API~~
 * ~~complete rewrite of app to React 18 and Typescript~~
 * ~~slimming down dependency tree (using pure React instead of create-react-app)~~
-* getting rid of mixins
+* ~~getting rid of mixins~~
 * refactoring map context
 * refactoring layers
-* replacing dependencies that are no longer maintained (like leaflet-almostover) with native solutions
+* replacing dependencies that are no longer maintained (like leaflet-almostover) with custom solutions
+
+## 2.4.0 - 22.08.2022
+
+### Added
+
+* webpack settings for splitting to chunks
+
+### Changed
+
+* excluded miragejs from production package
 
 ## 2.3.0 - 21.08.2022
 

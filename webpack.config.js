@@ -27,9 +27,9 @@ module.exports = {
     historyApiFallback: true,
   },
   performance: {
-      hints: false,
-      maxEntrypointSize: isDevelopment() ? 512000 : 10000,
-      maxAssetSize: isDevelopment() ? 512000 : 10000,
+    hints: false,
+    maxEntrypointSize: isDevelopment() ? 512000 : 10000,
+    maxAssetSize: isDevelopment() ? 512000 : 10000,
   },
   resolve: {
     extensions: ['.js','.jsx','.ts','.tsx'],
@@ -75,8 +75,8 @@ module.exports = {
             options: {
               importLoaders: 2,
               modules: {
-                  mode: 'local',
-                  localIdentName: isDevelopment() ? '[path][name]__[local]' : '[hash:base64:5]',
+                mode: 'local',
+                localIdentName: isDevelopment() ? '[path][name]__[local]' : '[hash:base64:5]',
               },
               sourceMap: false,
             },
@@ -91,8 +91,8 @@ module.exports = {
   },
   plugins: [
     new BundleAnalyzerPlugin({
-        analyzerMode: 'disabled',
-        generateStatsFile: true,
+      analyzerMode: 'disabled',
+      generateStatsFile: true,
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
@@ -102,6 +102,7 @@ module.exports = {
     isProduction() ? new CleanWebpackPlugin() : false,
   ].filter(Boolean),
   optimization: {
-      splitChunks: { chunks: "all" }
+    splitChunks: { chunks: "all" },
+    usedExports: true,
   },
 };

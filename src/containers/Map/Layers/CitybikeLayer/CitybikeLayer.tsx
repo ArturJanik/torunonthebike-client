@@ -2,13 +2,12 @@ import { useState, useEffect, useContext } from 'react';
 import * as L from 'leaflet';
 import { createStationPopup } from '../EventLayer/RoutePopup/RoutePopup';
 import { MapContext } from 'context/MapContext';
-import { isDev } from 'utilities/isEnv';
+import { isDev } from 'utilities/isDev';
 import styles from './CitybikeLayer.module.css';
 
-const urls = {
-  uptodate: (isDev()) ? 'http://localhost:3001/api/stations/verify_last_modification' : 'https://api.onthe.bike/api/stations/verify_last_modification',
-  getdata: (isDev()) ? 'http://localhost:3001/api/stations' : 'https://api.onthe.bike/api/stations'
-}
+const endpointHost = isDev() ? 'http://localhost:3001' : 'https://api.onthe.bike';
+const VERIFY_LAST_MODIFICATION_ENDPOINT = `${endpointHost}/api/stations/verify_last_modification`;
+const GET_STATIONS_DATA = `${endpointHost}/api/stations`;
 
 interface CitybikeLayerState {
   localsValid: boolean;
@@ -45,7 +44,7 @@ export const CitybikeLayer = (): JSX.Element => {
   useEffect(() => {
     validateLocals();
 
-    if(state.localsValid){
+    if (state.localsValid){
       checkIfDataInSync()
       .catch((err: any) => { 
         setState((prevState) => ({ ...prevState, stationsError: err, stationsLoading: false }));
@@ -68,11 +67,11 @@ export const CitybikeLayer = (): JSX.Element => {
   const fetchStationsData = (): Promise<any> => {
     setState((prevState) => ({ ...prevState, stationsLoading: true }));
 
-    return fetch(urls.getdata)
+    return fetch(GET_STATIONS_DATA)
       .then(res => res.json())
       .then(res => {
         const { stations, modificationDate } = res;
-        if(stations.length > 0 && modificationDate !== null){
+        if (stations.length > 0 && modificationDate !== null){
           localStorage.setItem('stationsData', JSON.stringify(stations));
           localStorage.setItem('stationsLastChange', modificationDate);
           setState((prevState) => ({ ...prevState, stationsData: stations, stationsLoading: false, localsValid: true }));
@@ -88,10 +87,16 @@ export const CitybikeLayer = (): JSX.Element => {
     const lastLocalChange = localStorage.getItem('stationsLastChange');
 
     if (lastLocalChange !== null) {
-      return fetch(urls.uptodate, { method: 'POST', body: JSON.stringify({ lastLocalChange }) })
+      return fetch(
+        VERIFY_LAST_MODIFICATION_ENDPOINT,
+        {
+          method: 'POST',
+          body: JSON.stringify({ lastLocalChange }),
+        }
+      )
         .then(res => res.json())
-        .then(upToDate => {
-          if(upToDate){
+        .then(verifyLastModification => {
+          if (verifyLastModification){
             const localStationsData = localStorage.getItem('stationsData');
             if (localStationsData !== null) {
               setState((prevState) => ({ ...prevState, stationsData: JSON.parse(localStationsData)}));
@@ -106,7 +111,7 @@ export const CitybikeLayer = (): JSX.Element => {
   }
 
   const drawStationsLayer = () => {
-    if(state.stationsError || state.stationsData === null || map === null) return;
+    if (state.stationsError || state.stationsData === null || map === null) return;
 
     const icon = L.divIcon({
       iconSize: [ 48, 48 ],

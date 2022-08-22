@@ -2,7 +2,7 @@ import { createServer } from 'miragejs';
 import bikelanes from './dummy/bikelanes.json';
 import stations from './dummy/stations.json';
 
-export default function () {
+export function makeServer() {
   createServer({
     routes() {
       this.urlPrefix = 'http://localhost:3001';

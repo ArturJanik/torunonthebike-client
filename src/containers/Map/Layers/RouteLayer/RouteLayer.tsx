@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import GeoJSON from './GeoJSON/GeoJSON';
 import { MapContext } from 'context/MapContext';
-import { isDev } from 'utilities/isEnv';
+import { isDev } from 'utilities/isDev';
 
 interface BikeLane {
   id: number;
@@ -48,8 +48,9 @@ export interface RouteOptions {
   onEachFeature: (feature: any, layer: L.Path) => void;
 }
 
-const LAST_MODIFICATION_ENDPOINT_DEV = 'http://localhost:3001/api/bikelanes/last_modification';
-const LAST_MODIFICATION_ENDPOINT_PROD = 'https://api.onthe.bike/api/bikelanes/last_modification';
+const endpointHost = isDev() ? 'http://localhost:3001' : 'https://api.onthe.bike';
+const FETCH_ROUTES_ENDPOINT = `${endpointHost}/api/bikelanes`;
+const LAST_MODIFICATION_ENDPOINT = `${endpointHost}/api/bikelanes/last_modification`;
 
 export const RouteLayer = () => {
   const mapCtx = useContext(MapContext);
@@ -60,8 +61,7 @@ export const RouteLayer = () => {
     if (navigator.onLine){
       const routesData = localStorage.getItem('routesData');
       if (routesData !== null) {
-        const url = (isDev()) ? LAST_MODIFICATION_ENDPOINT_DEV : LAST_MODIFICATION_ENDPOINT_PROD;
-        fetch(url)
+        fetch(LAST_MODIFICATION_ENDPOINT)
         .then(res => res.json())
         .then(res => {
           const lastChangedAt = res.last_changed_at;
@@ -90,8 +90,7 @@ export const RouteLayer = () => {
   }, []);
 
   const fetchRoutesData = (): void => {
-    const url = (isDev()) ? 'http://localhost:3001/api/bikelanes' : 'https://api.onthe.bike/api/bikelanes';
-    fetch(url)
+    fetch(FETCH_ROUTES_ENDPOINT)
     .then(res => res.json())
     .then((res) => {
       const routes: BikeLane[] = res[ 0 ];
