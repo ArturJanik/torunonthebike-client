@@ -7,16 +7,16 @@ const ZoomControl = (): JSX.Element => {
   const mapCtx = useContext(MapContext);
   const { map } = mapCtx.state;
 
+  if (map === null) {
+    return <></>;
+  }
+
   const zoomIn = (): void => {
-    if (map !== null) {
-      map.zoomIn();
-    }
+    map.zoomIn();
   };
   
   const zoomOut = (): void => {
-    if (map !== null) {
-      map.zoomOut();
-    }
+    map.zoomOut();
   };
 
   return (

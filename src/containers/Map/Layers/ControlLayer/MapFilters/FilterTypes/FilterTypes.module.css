@@ -1,0 +1,44 @@
+.filterTitle {
+    font-weight: 800;
+    border-bottom: 2px solid #ddd;
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+
+.filterTypes {
+    padding: 10px 0;
+}
+
+.filterType {
+    background-color: #eee;
+    cursor: pointer;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+    font-size: 1.4rem;
+    padding: 5px 10px;
+    transition: padding .2s ease;
+}
+
+.selected {
+    background-color: #2788ba;
+    border-bottom: 2px solid #006699;
+    color: #fff;
+}
+
+.filterType:not(.selected):hover {
+    background: #fff;
+    color: #666;
+    padding-left: 20px;
+}
+
+@media all and (max-width: 640px){
+    .filterTitle {
+    display: none;
+    }
+}
+
+@media all and (max-height: 600px){
+    .filterTypes {
+    padding: 5px 0;
+    }
+}

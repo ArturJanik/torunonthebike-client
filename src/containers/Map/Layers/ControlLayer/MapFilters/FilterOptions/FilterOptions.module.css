@@ -1,0 +1,16 @@
+.filterTitle {
+    font-weight: 800;
+    border-bottom: 2px solid #ddd;
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+
+.filterOptions {
+    padding: 10px 0;
+}
+  
+@media all and (max-width: 640px){
+    .filterTitle {
+        display: none;
+    }
+}

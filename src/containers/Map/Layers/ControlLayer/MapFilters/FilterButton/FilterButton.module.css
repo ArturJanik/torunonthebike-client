@@ -5,9 +5,11 @@
   right: 10px;
   top: 10px;
 }
+
 .button:before {
   background: #006699;
 }
+
 .image {
   display: block;
   height: 40px;

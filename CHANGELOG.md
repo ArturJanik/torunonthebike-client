@@ -8,6 +8,13 @@
 * refactoring layers
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with custom solutions
 
+## 2.4.1 - 22.08.2022
+
+### Changed
+
+* refactored control layer elements
+* minor reorganization of EventLayer
+
 ## 2.4.0 - 22.08.2022
 
 ### Added

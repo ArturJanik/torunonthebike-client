@@ -127,7 +127,7 @@ interface CreatePopupProps {
   nameTo: string;
 }
 
-const createRoutePopup = (popupType: string, properties: CreatePopupProps): string => {
+export const createRoutePopup = (popupType: string, properties: CreatePopupProps): string => {
   const { description, street, type, surface, quality, nameFrom, nameTo } = properties;
 
   switch (popupType.toString()) {
@@ -148,5 +148,3 @@ const createRoutePopup = (popupType: string, properties: CreatePopupProps): stri
 export const createStationPopup = (name: string) => {
   return `<div><p class="${ styles.text }">${ name }</p></div>`;
 }
-
-export default createRoutePopup;
