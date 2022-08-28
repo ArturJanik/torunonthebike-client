@@ -96,8 +96,6 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
-//       inject: true,
-//       minify: 'auto',
     }),
     isProduction() ? new CleanWebpackPlugin() : false,
   ].filter(Boolean),

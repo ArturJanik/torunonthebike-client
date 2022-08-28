@@ -1,16 +1,11 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import * as L from 'leaflet';
 import { MapContext } from 'context/MapContext';
 
 export const TileLayer = (): JSX.Element => {
   const mapCtx = useContext(MapContext);
-  const [created, setCreated] = useState(false);
 
   useEffect(() => {
-    if (created) {
-      return;
-    }
-
     const tileLayerOptions = {
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
@@ -25,10 +20,8 @@ export const TileLayer = (): JSX.Element => {
         minZoom: 6,
         opacity: 0.5
       }).addTo(map);
-  
-      setCreated(true);
     }
-  }, [created]);
+  }, []);
 
   return (
     <></>

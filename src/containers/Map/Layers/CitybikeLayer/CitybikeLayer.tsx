@@ -132,6 +132,4 @@ export const CitybikeLayer = (): JSX.Element => {
   return (
     <></>
   );
-}
-
-export default CitybikeLayer;
+};

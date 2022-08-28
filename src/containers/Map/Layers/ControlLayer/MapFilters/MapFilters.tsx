@@ -7,6 +7,7 @@ import styles from './MapFilters.module.css';
 
 export const MapFilters = (): JSX.Element => {
   const mapCtx = useContext(MapContext);
+  const { filterType } = mapCtx.state;
 
   const [filtersVisible, setFiltersVisible] = useState(false);
 
@@ -15,7 +16,7 @@ export const MapFilters = (): JSX.Element => {
   };
 
   const filtersClassname = filtersVisible ? styles.filterVisible : styles.filter;
-  const isSpecificFilterTypeSelected = mapCtx.state.filterType !== 'default';
+  const isSpecificFilterTypeSelected = filterType !== 'default';
 
   return(
     <>

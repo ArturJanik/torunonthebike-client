@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import { MapWrapper } from './MapWrapper/MapWrapper';
 import { TileLayer } from './Layers/TileLayer/TileLayer';
 import { RouteLayer } from './Layers/RouteLayer/RouteLayer';
-import EventLayer from './Layers/EventLayer/EventLayer';
+import { EventLayer } from './Layers/EventLayer/EventLayer';
 import { ControlLayer } from './Layers/ControlLayer/ControlLayer';
-import CitybikeLayer from './Layers/CitybikeLayer/CitybikeLayer';
+import { CitybikeLayer } from './Layers/CitybikeLayer/CitybikeLayer';
 
 import { MapContextProvider } from 'context/MapContext';
 import { setTitle } from 'utilities/setSeoTitle';

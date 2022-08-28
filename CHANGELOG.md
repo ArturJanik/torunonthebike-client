@@ -8,6 +8,13 @@
 * refactoring layers
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with custom solutions
 
+## 2.5.0 - 28.08.2022
+
+### Changed
+
+* refactored map context, got rid of context consumer
+* small changes in some components (export logic, redundant conditions, renaming)
+
 ## 2.4.1 - 22.08.2022
 
 ### Changed

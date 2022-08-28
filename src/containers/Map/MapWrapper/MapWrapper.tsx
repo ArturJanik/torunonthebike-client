@@ -6,29 +6,36 @@ import 'leaflet/dist/leaflet.css';
 import { MapContext } from 'context/MapContext';
 import styles from './MapWrapper.module.css';
 
-
 interface MapWrapperProps {
   children: JSX.Element[] | JSX.Element;
 }
 
+const MAP_CONTAINER_ID = 'map';
+
 export const MapWrapper = ({ children }: MapWrapperProps): JSX.Element => {
   const mapCtx = useContext(MapContext);
 
+  const { map } = mapCtx.state;
+
   useEffect(() => {
+    initializeMap();
+  }, []);
+
+  const initializeMap = (): void => {
     const mapOptions = {
       center: new L.LatLng(53.025,18.62),
       zoom: 14,
-      zoomControl: false
-    }
-    const map = L.map('map', mapOptions);
-    mapCtx.setMap(map);
-  }, []);
+      zoomControl: false,
+    };
 
-  // If there is no map initialized
-  // it will not render it's children layers (route layer, event layer etc.)
+    const mapObject = L.map(MAP_CONTAINER_ID, mapOptions);
+
+    mapCtx.setMap(mapObject);
+  };
+
   return (
-    <div id="map" className={ styles.mapWrapper }>
-      { (mapCtx.state.map !== null) && children }
+    <div id={MAP_CONTAINER_ID} className={styles.mapWrapper}>
+      { (map !== null) && children }
     </div>
   );
 }

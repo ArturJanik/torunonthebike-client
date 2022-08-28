@@ -64,5 +64,3 @@ export const EventLayer = (): JSX.Element => {
     <></>
   );
 }
-
-export default EventLayer;
