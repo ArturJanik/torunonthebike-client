@@ -4,9 +4,15 @@
 * ~~complete rewrite of app to React 18 and Typescript~~
 * ~~slimming down dependency tree (using pure React instead of create-react-app)~~
 * ~~getting rid of mixins~~
-* refactoring map context
+* ~~refactoring map context~~
 * refactoring layers
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with custom solutions
+
+## 2.6.0 - 28.08.2022
+
+### Changed
+
+* first step of refactoring route layer - moving data fetching outside component, minor cleanups
 
 ## 2.5.0 - 28.08.2022
 
