@@ -29,20 +29,6 @@ const content: JSX.Element = (
       <li>system operacjny</li>
       <li>rodzaj i wersja przeglądarki</li>
     </ul>
-    <h3>Dane statystyczne/analityczne</h3>
-    <p>
-      W celu lepszego dalszego rozwoju strony gromadzimy dane statystyczne
-      dotyczące ruchu na stronie za pośrednictwem usługi Google Analytics. W
-      ramach tych danych gromadzone są dane dotyczące m.in.:
-    </p>
-    <ul>
-      <li>lokalizacji geograficznej użytkowników</li>
-      <li>wykorzystanej przeglądarki</li>
-      <li>rodzaju urządzenia</li>
-      <li>systemu operacyjnego</li>
-      <li>odwiedzonych podstron w ramach strony torun.onthe.bike</li>
-      <li>interakcji użytkowników ze stroną</li>
-    </ul>
     <h2>Wykorzystywanie danych</h2>
     <p>
       Dane gromadzone w logach serwera mogą zostać wykorzystane przez autora
@@ -51,19 +37,9 @@ const content: JSX.Element = (
       administratorów serwera, na którym strona się znajduje, oraz na ewentualne
       żądanie uprawnionych do tego organów państwa.
     </p>
-    <p>
-      Dane gromadzone przez usługę Google Analytics będą wykorzystywane do
-      analizy zachowań użytkowników na stronie oraz w celu wspomagania procesu
-      decyzyjnego odnośnie ewentualnych zmian wprowadzanych na stronie. Należy
-      mieć na uwadze, że dane te są prezentowane w formie zagregowanej, przez co
-      nie ma możliwości identyfikacji za ich pośrednictwem poszczególnych
-      użytkowników serwisu. Administratorem tych danych jest właściciel usługi
-      Google Analytics.
-    </p>
     <h2>Czas przechowywania danych</h2>
     <ul>
       <li>logi serwera - czas nieokreślony</li>
-      <li>Google Analytics - 26 miesięcy</li>
     </ul>
     <hr />
     <h2>Czym są pliki Cookie</h2>
@@ -82,7 +58,6 @@ const content: JSX.Element = (
         pliki cookies wykorzystywane do utrwalenia ustawień serwisu wybranych
         przez użytkownika
       </li>
-      <li>pliki cookies generowane przez usługę Google Analytics</li>
     </ul>
     <h3>Zmiana ustawień plików Cookie</h3>
     <p>

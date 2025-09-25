@@ -8,6 +8,11 @@
 * refactoring layers
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with custom solutions
 
+## 2.7.0 - 25.09.2025
+
+* removed Google Analytics integration
+* removed __react-ga__ 
+
 ## 2.6.0 - 28.08.2022
 
 ### Changed
