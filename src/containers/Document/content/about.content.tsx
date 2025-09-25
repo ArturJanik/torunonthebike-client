@@ -14,14 +14,14 @@ const content: JSX.Element = (
       <li>Drogi są prezentowane w formie fragmentów, których podział opiera się zazwyczaj o rodzaj nawierzchni lub najważniejsze w mojej opinii ulice przecinające daną DDR.</li>
       <li>Jezdnie z kontraruchem zostają pominięte chyba, że stanowią spójne przedłużenie drogi dla rowerów.</li>
       <li>Starówka zostaje pominięta.</li>
-      <li>Z czasem mapa może być uzupełniona o nowe warstwy - w najbliższych planach jest mapa serwisów i sklepów rowerowych.</li>
     </ul>
     <h3>Aktualizacja 08.08.2019</h3>
     <ul>
-      <li>Warstwa z danymi o ostrzeżeniach została ograniczona do robót budowlanych. Uznałem, że ze wszystkich trzech typów prezentowanych tam wcześniej informacji to właśnie roboty budowlane mają największą wartość dla użytkownika.</li>
-      <li>Została dodana warstwa przedstawiająca rozmieszczenie stacji Torvelo. Ze względów techniczych nie przewiduję na razie rozszerzenia informacji o poszczególnych stacjach.</li>
-      <li>Mapa powinna teraz działać poprawnie na przeglądarce IE11.</li>
       <li>Poprawiłem drobne błędy w stopce i przypisach mapy - dziękuję za zwrócenie uwagi jednemu z użytkowników!</li>
+    </ul>
+    <h3>Aktualizacja 25.09.2025</h3>
+    <ul>
+      <li>Usunięcie warstwy stacji rowerowych - strona pozostanie jedynie mapą dróg rowerowych.</li>
     </ul>
     <hr />
     <h2>FAQ</h2>
@@ -55,7 +55,7 @@ const content: JSX.Element = (
     <p>Nie mnie to oceniać, ale jest kilka miejsc w Toruniu gdzie przy odrobinie pecha może nam się władować pod koła dzika zwierzyna, np. okolice Carrefoura.</p>
     <hr />
     <h2>Uwagi końcowe</h2>
-    <p>Nośta kaski i złaźta z rowerów na przejściach. Czaszka jest jedna, a dwie tony blachy nie wybaczają ;)</p>
+    <p>Nośta kaski i złaźta z rowerów na przejściach. Czaszka jest jedna, a beton i blacha nie wybaczają.</p>
     <p>Pozdrawiam, Artur</p>
   </>
 );
