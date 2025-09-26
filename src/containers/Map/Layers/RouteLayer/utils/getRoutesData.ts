@@ -9,7 +9,7 @@ export const getRoutesData = async (): Promise<BikeLane[]> => {
     let routesData: BikeLane[] = [];
     routesData = getRoutesFromLocalStorage();
 
-    if (routesData !== []) {
+    if (routesData.length > 0) {
         const isUpToDate = await validateIfRouteDataIsUpToDate();
         
         if (!isUpToDate) {
