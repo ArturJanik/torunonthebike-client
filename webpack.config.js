@@ -1,5 +1,4 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -16,6 +15,9 @@ module.exports = {
     publicPath: '/',
     assetModuleFilename: 'static/images/[hash][ext][query]',
     chunkFilename: 'static/js/[name].[chunkhash].chunk.js',
+    clean: {
+      dry: false, // true - Logs the assets that should be removed instead of deleting them.
+    },
   },
   target: 'web',
   devServer: {
@@ -50,43 +52,26 @@ module.exports = {
         use: 'ts-loader'
       },
       {
-        test: /\.(sc|c)ss$/,
-        exclude: /\.module\.(sc|c)ss$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              modules: 'global',
-              sourceMap: false,
-            },
-          },
-        ],
-        sideEffects: true,
-      },
-      {
-        test: /\.module\.(sc|c)ss$/,
+        test: /\.css$/i,
         use: [
           'style-loader',
           'css-modules-typescript-loader',
           {
             loader: 'css-loader',
             options: {
-              importLoaders: 2,
+              esModule: false,
               modules: {
-                mode: 'local',
-                localIdentName: isDevelopment() ? '[path][name]__[local]' : '[hash:base64:5]',
-              },
-              sourceMap: false,
+                auto: true,
+                namedExport: false,
+              }
             },
           },
         ],
       },
       {
-        test: /\.(jpg|png|svg|gif)$/,
-        type: 'asset/resource',
-      }
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
+        type: 'asset',
+      },
     ],
   },
   plugins: [
@@ -97,7 +82,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
-    isProduction() ? new CleanWebpackPlugin() : false,
   ].filter(Boolean),
   optimization: {
     splitChunks: { chunks: "all" },

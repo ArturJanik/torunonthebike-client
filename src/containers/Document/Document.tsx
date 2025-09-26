@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Button } from '../../components/UI/Button/Button';
 import { pages } from './content/content';
 import { setTitle } from 'utilities/setSeoTitle';
 import styles from './Document.module.css';
@@ -21,6 +22,7 @@ export const Document = ({ show }: DocumentProps): JSX.Element => {
       <div className={ styles.content }>
         {content}
       </div>
+      <Button onClick={() => window.history.back()} className={ styles.button }><span>Wstecz</span></Button>
     </section>
   );
 };
