@@ -74,9 +74,9 @@ const styleRoutes = (feature: any, layer: L.Path, type: FilterType, options: Fil
     if(opt.value.toString() === feature.properties[type].toString()){
       if(opt.checked === true){
         feature.currentColor = opt.color;
-        layer.setStyle({ color: opt.color, className: '' })
+        layer.setStyle({ color: opt.color, className: '' });
       } else {
-        layer.setStyle({ opacity: 0, className: 'unhoverable' })
+        layer.setStyle({ opacity: 0, className: 'unhoverable' });
       }
     }
   });

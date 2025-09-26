@@ -21,7 +21,7 @@
     "@babel/preset-react": "7.27.1",
     "@babel/preset-typescript": "7.27.1",
     "@babel/runtime": "7.28.4",
-    "@types/leaflet": "1.7.11",
+    "@types/leaflet": "1.9.20",
     "@types/node": "18.19.127",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
@@ -43,9 +43,9 @@
     "webpack-dev-server": "5.2.2"
   },
   "dependencies": {
-    "leaflet": "1.8.0",
+    "leaflet": "1.9.4",
     "leaflet-almostover": "1.0.1",
-    "leaflet-geometryutil": "0.9.3",
+    "leaflet-geometryutil": "0.10.3",
     "react": "18.2.0",
     "react-app-polyfill": "3.0.0",
     "react-dom": "18.2.0",
