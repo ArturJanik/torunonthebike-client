@@ -144,7 +144,3 @@ export const createRoutePopup = (popupType: string, properties: CreatePopupProps
       </div>`;
   }
 }
-
-export const createStationPopup = (name: string) => {
-  return `<div><p class="${ styles.text }">${ name }</p></div>`;
-}

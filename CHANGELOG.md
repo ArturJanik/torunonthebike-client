@@ -8,6 +8,18 @@
 * refactoring layers
 * replacing dependencies that are no longer maintained (like leaflet-almostover) with custom solutions
 
+## 3.0.0 - 25.09.2025
+
+### Changed
+
+* updated webpack and loaders
+
+### Removed
+
+* removed Google Analytics integration
+* removed __react-ga__
+* removed bike stations layer 
+
 ## 2.6.0 - 28.08.2022
 
 ### Changed

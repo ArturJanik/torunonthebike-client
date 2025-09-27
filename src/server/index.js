@@ -1,6 +1,5 @@
 import { createServer } from 'miragejs';
 import bikelanes from './dummy/bikelanes.json';
-import stations from './dummy/stations.json';
 
 export function makeServer() {
   createServer({
@@ -14,17 +13,8 @@ export function makeServer() {
         },
       ]));
 
-      this.get('/api/stations', () => ({
-        stations: [ ...stations ],
-        modificationDate: '2021-03-21 12:59:05',
-      }));
-
       this.get('/api/bikelanes/last_modification', () => ({
         last_changed_at: null,
-      }));
-
-      this.post('/api/stations/verify_last_modification', () => ({
-        upToDate: false,
       }));
     },
   });

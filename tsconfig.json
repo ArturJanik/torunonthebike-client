@@ -1,25 +1,25 @@
 {
-    "compilerOptions": {
-        "target": "ES5",
-        "allowJs": true,
-        "moduleResolution": "node",
-        "jsx": "react-jsx",
-        "module": "ES2015",
-        "noImplicitAny": true,
-        "strict": true,
-        "removeComments": true,
-        "strictNullChecks": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "plugins": [{ "name": "typescript-plugin-css-modules" }],
-        "baseUrl": "src",
-        "paths": { 
-          "components": ["components/*"],
-          "assets": ["assets/*"],
-          "utils": ["utilities/*"],
-          "context": ["context/*"]
-        }
-    },
-    "include": ["src/**/*", "src/typings.d.ts"],
-    "exclude": ["node_modules", "**/*.spec.ts", "dist/**/*", "public/**/*", "src/index.js", "src/server/index.js"]
+  "compilerOptions": {
+    "target": "ES5",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "module": "ES2015",
+    "noImplicitAny": true,
+    "strict": true,
+    "removeComments": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules", "options": { "namedExports": false } }],
+    "baseUrl": "src",
+    "paths": { 
+      "components": ["components/*"],
+      "assets": ["assets/*"],
+      "utils": ["utilities/*"],
+      "context": ["context/*"]
+    }
+  },
+  "include": ["src/**/*", "src/typings.d.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts", "dist/**/*", "public/**/*", "src/index.js", "src/server/index.js"]
 }
