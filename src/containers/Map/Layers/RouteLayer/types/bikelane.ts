@@ -1,5 +1,11 @@
 type Roadlane = 'south' | 'north' | 'east' | 'west';
 
+interface LastModificationInfo {
+    last_changed_at: string;
+}
+
+export type RoutesServerResponse = [RawBikeLane[], LastModificationInfo];
+
 export interface RawBikeLane {
     id: number;
     street: string;
